@@ -1,0 +1,19 @@
+{
+  "name": "selenium-javascript-skill",
+  "summary": "A Claude Code skill teaching how to write Selenium WebDriver browser automation code in JavaScript.",
+  "description": "Teaches locating elements, performing actions, explicit waits, and writing real assertions with Selenium WebDriver in JavaScript, grounded in real working examples from this project's sibling demo repos.",
+  "repository": "https://github.com/testingexamples/selenium-javascript-skill",
+  "license": "MIT OR Apache-2.0 OR GPL-2.0-only OR GPL-3.0-only OR BSD-3-Clause",
+  "sections": [
+    {
+      "title": "Docs",
+      "links": [
+        { "title": "README", "url": "README.md", "description": "What this repo is." },
+        { "title": "Skill", "url": "SKILL.md", "description": "The actual skill content." },
+        { "title": "Spec", "url": "spec/index.md", "description": "What this skill must accurately cover." },
+        { "title": "Agent instructions", "url": "AGENTS.md", "description": "Source-of-truth pointer for agents working on this repo." },
+        { "title": "Citation", "url": "CITATION.cff", "description": "How to cite this work." }
+      ]
+    }
+  ]
+}

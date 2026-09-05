@@ -1,0 +1,11 @@
+# Selenium JavaScript Skill
+
+> A Claude Code skill teaching how to write Selenium WebDriver browser automation code in JavaScript: locating elements, performing actions, explicit waits, and writing real assertions.
+
+## Docs
+
+- [README](README.md): What this repo is.
+- [Skill](SKILL.md): The actual skill content.
+- [Spec](spec/index.md): What this skill must accurately cover.
+- [Agent instructions](AGENTS.md): Source-of-truth pointer for agents working on this repo.
+- [Citation](CITATION.cff): How to cite this work.
