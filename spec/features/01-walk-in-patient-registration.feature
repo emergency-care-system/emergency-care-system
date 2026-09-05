@@ -43,20 +43,20 @@ Feature: Walk-in Patient Registration
     Given a new patient arrives at the ED without prior registration
     And the patient provides valid identification
     When I enter the patient's demographic information:
-      | Field           | Value              |
-      | First Name      | John               |
-      | Last Name       | Doe                |
-      | Date of Birth   | 1985-06-15         |
-      | Phone Number    | 555-123-4567       |
-      | Address         | 123 Main St        |
-      | City            | Springfield        |
-      | State           | IL                 |
-      | Zip Code        | 62701              |
+      | Field         | Value        |
+      | Given Name    | John         |
+      | Family Name   | Doe          |
+      | Date of Birth | 1985-06-15   |
+      | Phone Number  | 555-123-4567 |
+      | Address       | 123 Main St  |
+      | City          | Springfield  |
+      | State         | IL           |
+      | Zip Code      | 62701        |
     And I enter the patient's insurance details:
-      | Field           | Value              |
-      | Insurance Type  | Blue Cross         |
-      | Policy Number   | BC123456789        |
-      | Group Number    | GRP001             |
+      | Field          | Value       |
+      | Insurance Type | Blue Cross  |
+      | Policy Number  | BC123456789 |
+      | Group Number   | GRP001      |
     And I submit the registration form
     Then the system creates a unique patient record
     And the system assigns a medical record number
@@ -68,12 +68,12 @@ Feature: Walk-in Patient Registration
     Given a new patient arrives at the ED without prior registration
     And the patient does not have insurance information
     When I enter the patient's demographic information:
-      | Field           | Value              |
-      | First Name      | Jane               |
-      | Last Name       | Smith              |
-      | Date of Birth   | 1990-03-22         |
-      | Phone Number    | 555-987-6543       |
-      | Address         | 456 Oak Ave        |
+      | Field         | Value        |
+      | Given Name    | Jane         |
+      | Family Name   | Smith        |
+      | Date of Birth | 1990-03-22   |
+      | Phone Number  | 555-987-6543 |
+      | Address       | 456 Oak Ave  |
     And I select "Self-Pay" as the insurance type
     And I submit the registration form
     Then the system creates a unique patient record
@@ -84,10 +84,10 @@ Feature: Walk-in Patient Registration
   Scenario: Handle duplicate patient registration attempt
     Given a patient with the same name and date of birth already exists in the system
     When I enter the patient's demographic information:
-      | Field           | Value              |
-      | First Name      | John               |
-      | Last Name       | Doe                |
-      | Date of Birth   | 1985-06-15         |
+      | Field         | Value      |
+      | Given Name    | John       |
+      | Family Name   | Doe        |
+      | Date of Birth | 1985-06-15 |
     And I submit the registration form
     Then the system displays a warning "Potential duplicate patient found"
     And the system shows existing patient records for verification
@@ -96,14 +96,14 @@ Feature: Walk-in Patient Registration
   Scenario: Registration with invalid demographic data
     Given a new patient arrives at the ED without prior registration
     When I enter incomplete demographic information:
-      | Field           | Value              |
-      | First Name      | John               |
-      | Last Name       |                    |
-      | Date of Birth   | invalid-date       |
+      | Field         | Value        |
+      | Given Name    | John         |
+      | Family Name   |              |
+      | Date of Birth | invalid-date |
     And I submit the registration form
     Then the system displays validation errors:
-      | Field           | Error Message              |
-      | Last Name       | Last name is required      |
-      | Date of Birth   | Invalid date format        |
+      | Field         | Error Message           |
+      | Family Name   | Family name is required |
+      | Date of Birth | Invalid date format     |
     And the patient record is not created
     And the form remains open for correction

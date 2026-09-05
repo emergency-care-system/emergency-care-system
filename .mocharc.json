@@ -1,0 +1,4 @@
+{
+  "spec": "tests-with-selenium-javascript/**/*.test.js",
+  "timeout": 20000
+}

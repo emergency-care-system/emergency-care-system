@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+
+:root {
+	--ed-bg: #f4f6f8;
+	--ed-surface: #ffffff;
+	--ed-border: #d7dde3;
+	--ed-text: #1a2733;
+	--ed-muted: #5b6b7a;
+	--ed-primary: #0b5fff;
+	--ed-primary-dark: #0842b5;
+	--ed-danger: #c22b2b;
+	--ed-danger-bg: #fdecec;
+	--ed-warning: #8a5a00;
+	--ed-warning-bg: #fff6e0;
+	--ed-success: #146c2e;
+	--ed-success-bg: #e9f7ee;
+	--ed-info-bg: #eaf1ff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: var(--ed-bg);
+	color: var(--ed-text);
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+}
+
+.app-shell {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.top-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.75rem 1.25rem;
+	background: var(--ed-surface);
+	border-bottom: 1px solid var(--ed-border);
+}
+
+.brand {
+	font-weight: 700;
+	font-size: 1.1rem;
+	color: var(--ed-text);
+	text-decoration: none;
+}
+
+.session-info {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-size: 0.9rem;
+}
+
+.role-badge {
+	background: var(--ed-info-bg);
+	color: var(--ed-primary-dark);
+	border-radius: 999px;
+	padding: 0.15rem 0.6rem;
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.app-main {
+	flex: 1;
+	display: flex;
+	min-height: 0;
+}
+
+button {
+	font: inherit;
+	cursor: pointer;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	border: 1px solid transparent;
+	border-radius: 0.4rem;
+	padding: 0.5rem 1rem;
+	font-weight: 600;
+	background: var(--ed-primary);
+	color: white;
+}
+
+.btn:hover {
+	background: var(--ed-primary-dark);
+}
+
+.btn.secondary {
+	background: transparent;
+	color: var(--ed-text);
+	border-color: var(--ed-border);
+}
+
+.btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.panel-heading {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin: 0 0 0.25rem;
+}
+
+.panel-subtitle {
+	color: var(--ed-muted);
+	margin: 0 0 1.25rem;
+	font-size: 0.95rem;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	margin-bottom: 0.9rem;
+}
+
+.field label {
+	font-weight: 600;
+	font-size: 0.85rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+	border: 1px solid var(--ed-border);
+	border-radius: 0.35rem;
+	padding: 0.5rem 0.6rem;
+	font: inherit;
+	background: var(--ed-surface);
+	color: var(--ed-text);
+}
+
+.field p[role='alert'] {
+	color: var(--ed-danger);
+	font-size: 0.8rem;
+	margin: 0;
+}
+
+.field-row {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 0 1rem;
+}
+
+.card {
+	background: var(--ed-surface);
+	border: 1px solid var(--ed-border);
+	border-radius: 0.6rem;
+	padding: 1.25rem;
+	margin-bottom: 1rem;
+}
+
+[role='alert'],
+[role='status'] {
+	border-radius: 0.4rem;
+	padding: 0.65rem 0.9rem;
+	margin: 0.5rem 0;
+	font-size: 0.9rem;
+}
+
+[data-type='error'] {
+	background: var(--ed-danger-bg);
+	color: var(--ed-danger);
+}
+
+[data-type='warning'] {
+	background: var(--ed-warning-bg);
+	color: var(--ed-warning);
+}
+
+[data-type='success'] {
+	background: var(--ed-success-bg);
+	color: var(--ed-success);
+}
+
+[data-type='info'] {
+	background: var(--ed-info-bg);
+	color: var(--ed-primary-dark);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table th,
+table td {
+	text-align: left;
+	padding: 0.5rem 0.6rem;
+	border-bottom: 1px solid var(--ed-border);
+	font-size: 0.9rem;
+}
+
+table th {
+	color: var(--ed-muted);
+	font-weight: 600;
+}
