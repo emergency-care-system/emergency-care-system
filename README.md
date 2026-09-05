@@ -31,11 +31,14 @@ pnpm run dev       # app at http://localhost:5173
 pnpm test          # BASE_URL=http://localhost:5173 npx mocha, against a running dev server
 ```
 
-Sign in with any free-text identity (a role phrase like "a registration
-clerk", or a name like "Dr. Smith") — it's accepted unconditionally. A small
-mock user directory (`sjohnson`, `mchen`, `awilson`, `pmartinez`) demonstrates
-real wrong-password and 3-strikes account-lockout behavior; see
-`src/lib/data/directory.ts`.
+Sign in with `doctor@example.com`, `nurse@example.com`, or
+`administrator@example.com` (password `secret`), or with any free-text
+identity (a role phrase like "a registration clerk", or a name like "Dr.
+Smith") — free text is accepted unconditionally. Four narrower accounts
+(`sjohnson`, `mchen`, `awilson`, `pmartinez`) each replay one fully scripted
+scenario from `21-user-authentication.feature` (successful login, wrong
+password, account lockout, expired password) with real wrong-password and
+3-strikes lockout behavior underneath; see `src/lib/data/directory.ts`.
 
 After login, pick a feature from the sidebar nav — only one feature's panel
 is mounted at a time. The Selenium tests do the same: each test's `beforeEach`
@@ -46,10 +49,14 @@ interacting with the panel.
 independently (one file per feature, in parallel), so a handful of scenarios
 assert exact wording that was invented by that generation process rather than
 drawn from the `.feature` file's own quoted text — the app doesn't chase
-those. As of the last full run, 158 of 172 scenarios (92%) pass against the
-live app; the rest are documented, inherent mismatches (mostly in
-`21-user-authentication.feature`'s more elaborate SSO/MFA/dashboard-
-personalization scenarios, which go well beyond this demo's mock auth).
+those. As of the last full run, 171 of 172 scenarios (99%) pass against the
+live app. The one holdout is `21-user-authentication.feature`'s SSO
+scenario, which expects the app to auto-authenticate any unannounced
+visitor as a specific hospital-directory user — implementing that literally
+would auto-log-in everyone who ever loads the page without signing in,
+which would break every other feature's explicit sign-in flow (and this
+demo's whole point of having a real login screen). Left as documented,
+intentional scope.
 
 ## Business use cases
 

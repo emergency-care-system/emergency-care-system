@@ -504,6 +504,9 @@ describe('Feature: User Authentication', function () {
     // Given the primary authentication system is experiencing technical difficulties
     // And there is a patient emergency requiring immediate system access
     // And I am "Dr. Lisa Chen" needing urgent access to patient records
+    // The emergency override option lives on the sign-in screen.
+    await driver.get(`${BASE_URL}/login`);
+    await driver.wait(until.elementLocated(By.css('[data-testid="login-identity"]')), 10000);
     // When I request emergency override access
     await driver.findElement(By.css('[data-testid="emergency-override-button"]')).click();
 

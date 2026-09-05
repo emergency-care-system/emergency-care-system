@@ -5,6 +5,39 @@
 	import { sessionState, restoreSession } from '$lib/stores/session.svelte';
 	import { features } from '$lib/features/registry';
 
+	type Row = { label: string; value: string };
+
+	function slug(label: string): string {
+		return label
+			.trim()
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/(^-|-$)/g, '');
+	}
+
+	// Role-personalized Overview content -- spec/features/21-user-authentication.feature,
+	// "Role-based dashboard customization after successful login".
+	const physicianDashboard: Row[] = [
+		{ label: 'Patient Queue', value: 'Patients waiting to be seen by priority' },
+		{ label: 'Active Orders', value: 'Lab results, imaging pending review' },
+		{ label: 'Critical Alerts', value: 'Abnormal vitals, critical lab values' },
+		{ label: 'Decision Support', value: 'Clinical guidelines, drug interactions' },
+		{ label: 'Documentation Tools', value: 'Templates for common conditions' }
+	];
+	const chargeNurseDashboard: Row[] = [
+		{ label: 'Department Overview', value: 'Bed status, staff assignments, census' },
+		{ label: 'Resource Management', value: 'Equipment status, supply levels' },
+		{ label: 'Staff Coordination', value: 'Break schedules, assignments, coverage' },
+		{ label: 'Quality Metrics', value: 'Wait times, patient satisfaction, safety' },
+		{ label: 'Administrative Tasks', value: 'Reporting, scheduling, policy updates' }
+	];
+	const technicalDashboard: Row[] = [
+		{ label: 'System Status', value: 'Server health, network connectivity' },
+		{ label: 'User Management', value: 'Account status, permission changes' },
+		{ label: 'Audit Logs', value: 'System access, security events' },
+		{ label: 'Maintenance Tools', value: 'Backup status, system updates' }
+	];
+
 	let activeSlug = $state<string | null>(null);
 	let ActivePanel = $state<Component | null>(null);
 	let loading = $state(false);
@@ -32,6 +65,19 @@
 		loading = false;
 	}
 </script>
+
+{#snippet detailTable(rows: Row[])}
+	<table>
+		<tbody>
+			{#each rows as row (row.label)}
+				<tr>
+					<th>{row.label}</th>
+					<td data-testid={slug(row.label)}>{row.value}</td>
+				</tr>
+			{/each}
+		</tbody>
+	</table>
+{/snippet}
 
 {#if sessionState.current}
 	<nav class="sidebar" data-testid="feature-nav" aria-label="ED features">
@@ -71,6 +117,17 @@
 					This is a demonstration Emergency Department management system. All data shown
 					throughout the app is fictitious and exists only in this browser session.
 				</p>
+
+				{#if sessionState.current.role === 'Physician'}
+					<h2 class="panel-heading" style="font-size: 1.05rem;">Physician Dashboard</h2>
+					{@render detailTable(physicianDashboard)}
+				{:else if sessionState.current.role === 'Charge Nurse'}
+					<h2 class="panel-heading" style="font-size: 1.05rem;">Charge Nurse Dashboard</h2>
+					{@render detailTable(chargeNurseDashboard)}
+				{:else if sessionState.current.role === 'Technical Support'}
+					<h2 class="panel-heading" style="font-size: 1.05rem;">Technical Dashboard</h2>
+					{@render detailTable(technicalDashboard)}
+				{/if}
 			</div>
 		{:else if loading}
 			<p>Loading…</p>
