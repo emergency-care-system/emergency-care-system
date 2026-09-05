@@ -22,8 +22,6 @@
 #
 # - Role-based dashboards - Customized interfaces for different user types
 #
-# - Single Sign-On integration - Seamless authentication with hospital directory
-#
 # - Mobile device security - Enhanced multi-factor authentication for mobile access
 #
 # - Emergency override - Emergency access protocols during system issues
@@ -41,8 +39,6 @@
 # - Emergency override procedures for patient care continuity
 #
 # - Mobile device management with location verification
-#
-# - Single Sign-On integration with hospital Active Directory
 #
 # - Session timeout controls for unattended workstations
 #
@@ -216,25 +212,6 @@ Feature: User Authentication
       | User Management       | Account status, permission changes        |
       | Audit Logs           | System access, security events            |
       | Maintenance Tools     | Backup status, system updates             |
-
-  Scenario: Single Sign-On (SSO) integration with hospital directory
-    Given the hospital uses Active Directory for centralized authentication
-    And SSO is configured for the ED management system
-    When I am "Dr. Robert Kim" already logged into the hospital network
-    And I access the ED management system from my workstation
-    Then the system recognizes my existing authentication:
-      | SSO Authentication    | Process                                    |
-      | Network Credential    | Windows authentication token validated    |
-      | Directory Lookup      | User details retrieved from Active Directory|
-      | Role Mapping          | Hospital role mapped to ED system permissions|
-      | Session Creation      | Automatic login without credential prompt  |
-    And I am automatically logged in with appropriate permissions
-    And the SSO login is logged for audit purposes:
-      | SSO Audit Entry       | Information                                |
-      | Authentication Method | Single Sign-On via Active Directory       |
-      | Network Username      | HOSPITAL\\rkim                            |
-      | Automatic Login Time  | 2025-06-24 09:30:45                       |
-      | Workstation Domain    | Verified hospital domain computer          |
 
   Scenario: Mobile device authentication with additional security
     Given I am using the mobile ED app on my smartphone

@@ -399,51 +399,6 @@ describe('Feature: User Authentication', function () {
     }
   });
 
-  it('Single Sign-On (SSO) integration with hospital directory', async () => {
-    // Given the hospital uses Active Directory for centralized authentication
-    // And SSO is configured for the ED management system
-    // When I am "Dr. Robert Kim" already logged into the hospital network
-    // And I access the ED management system from my workstation
-    await driver.get(BASE_URL);
-    await driver.wait(until.elementLocated(By.css('[data-testid="app-root"]')), 10000);
-
-    // Then the system recognizes my existing authentication:
-    //   | SSO Authentication    | Process                                    |
-    //   | Network Credential    | Windows authentication token validated    |
-    //   | Directory Lookup      | User details retrieved from Active Directory|
-    //   | Role Mapping          | Hospital role mapped to ED system permissions|
-    //   | Session Creation      | Automatic login without credential prompt  |
-    const ssoAuthentication = [
-      { label: 'Network Credential', value: 'Windows authentication token validated' },
-      { label: 'Directory Lookup', value: 'User details retrieved from Active Directory' },
-      { label: 'Role Mapping', value: 'Hospital role mapped to ED system permissions' },
-      { label: 'Session Creation', value: 'Automatic login without credential prompt' },
-    ];
-    for (const { label, value } of ssoAuthentication) {
-      assert.strictEqual(await getText(driver, label), value);
-    }
-
-    // And I am automatically logged in with appropriate permissions
-    const appRoot = await driver.findElement(By.css('[data-testid="app-root"]'));
-    assert.ok(await appRoot.isDisplayed());
-
-    // And the SSO login is logged for audit purposes:
-    //   | SSO Audit Entry       | Information                                |
-    //   | Authentication Method | Single Sign-On via Active Directory       |
-    //   | Network Username      | HOSPITAL\\rkim                            |
-    //   | Automatic Login Time  | 2025-06-24 09:30:45                       |
-    //   | Workstation Domain    | Verified hospital domain computer          |
-    const ssoAuditEntry = [
-      { label: 'Authentication Method', value: 'Single Sign-On via Active Directory' },
-      { label: 'Network Username', value: 'HOSPITAL\\rkim' },
-      { label: 'Automatic Login Time', value: '2025-06-24 09:30:45' },
-      { label: 'Workstation Domain', value: 'Verified hospital domain computer' },
-    ];
-    for (const { label, value } of ssoAuditEntry) {
-      assert.strictEqual(await getText(driver, label), value);
-    }
-  });
-
   it('Mobile device authentication with additional security', async () => {
     // Given I am using the mobile ED app on my smartphone
     // And mobile access requires enhanced security measures

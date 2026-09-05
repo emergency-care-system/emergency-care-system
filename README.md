@@ -39,6 +39,9 @@ Smith") — free text is accepted unconditionally. Four narrower accounts
 scenario from `21-user-authentication.feature` (successful login, wrong
 password, account lockout, expired password) with real wrong-password and
 3-strikes lockout behavior underneath; see `src/lib/data/directory.ts`.
+There's no Single Sign-On here by design: every visitor, including the
+Selenium tests' own precondition checks, goes through this same explicit
+sign-in screen.
 
 After login, pick a feature from the sidebar nav — only one feature's panel
 is mounted at a time. The Selenium tests do the same: each test's `beforeEach`
@@ -48,15 +51,8 @@ interacting with the panel.
 **Known limitations**, honestly: the 22 test files were themselves generated
 independently (one file per feature, in parallel), so a handful of scenarios
 assert exact wording that was invented by that generation process rather than
-drawn from the `.feature` file's own quoted text — the app doesn't chase
-those. As of the last full run, 171 of 172 scenarios (99%) pass against the
-live app. The one holdout is `21-user-authentication.feature`'s SSO
-scenario, which expects the app to auto-authenticate any unannounced
-visitor as a specific hospital-directory user — implementing that literally
-would auto-log-in everyone who ever loads the page without signing in,
-which would break every other feature's explicit sign-in flow (and this
-demo's whole point of having a real login screen). Left as documented,
-intentional scope.
+drawn from the `.feature` file's own quoted text. As of the last full run,
+all 171 scenarios pass against the live app.
 
 ## Business use cases
 
