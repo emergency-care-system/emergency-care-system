@@ -334,7 +334,7 @@ describe('Feature: Audit Trail', function () {
     //   | Unauthorized Access | 0.3% flagged for investigation (47 instances) |
     const complianceIndicators = [
       { label: 'Appropriate Access', value: '99.2% of accesses had documented treatment relationship' },
-      { label: 'Minimum Necessary', value: '98.7% accessed only required data elements' },
+      { label: 'Minimum Necessary Compliance', value: '98.7% accessed only required data elements' },
       { label: 'Timely Documentation', value: '99.8% of access properly documented within 24 hours' },
       { label: 'Unauthorized Access', value: '0.3% flagged for investigation (47 instances)' },
     ];

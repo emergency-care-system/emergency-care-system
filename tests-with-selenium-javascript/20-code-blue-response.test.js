@@ -245,7 +245,7 @@ describe('Feature: Code Blue Response', function () {
     //   | Intervention Pause   | CPR discontinued, monitoring intensified  |
     const codeStatusUpdates = [
       { label: 'ROSC Achievement', value: 'Time: 14:43:15 - ROSC achieved' },
-      { label: 'Vital Signs', value: 'BP: 110/70, HR: 85, documented' },
+      { label: 'Post-ROSC Vital Signs', value: 'BP: 110/70, HR: 85, documented' },
       { label: 'Rhythm Change', value: 'Normal sinus rhythm confirmed' },
       { label: 'Intervention Pause', value: 'CPR discontinued, monitoring intensified' },
     ];
@@ -357,7 +357,7 @@ describe('Feature: Code Blue Response', function () {
       { label: 'Family Escort', value: 'Security escorts family to private area' },
       { label: 'Communication', value: 'Social worker provides immediate support' },
       { label: 'Information Updates', value: 'Regular updates provided during resuscitation' },
-      { label: 'Chaplain Services', value: 'Spiritual care offered immediately' },
+      { label: 'Chaplain Services Immediate Support', value: 'Spiritual care offered immediately' },
     ];
     for (const { label, value } of familyManagementProtocols) {
       assert.strictEqual(await getText(driver, label), value);
@@ -410,9 +410,9 @@ describe('Feature: Code Blue Response', function () {
     //   | Team Coordination     | Communication effectiveness score          |
     const performanceMetrics = [
       { label: 'Response Time', value: '1 minute 23 seconds from alert to arrival' },
-      { label: 'No-flow Time', value: '15 seconds total interruption time' },
+      { label: 'No-flow Time Performance', value: '15 seconds total interruption time' },
       { label: 'First Shock Time', value: '3 minutes 45 seconds from arrest' },
-      { label: 'Medication Timing', value: 'All drugs given within target windows' },
+      { label: 'Medication Timing Compliance', value: 'All drugs given within target windows' },
       { label: 'Team Coordination', value: 'Communication effectiveness score' },
     ];
     for (const { label, value } of performanceMetrics) {
@@ -468,7 +468,7 @@ describe('Feature: Code Blue Response', function () {
       { label: 'Alert Cancellation', value: '"Code blue canceled - false alarm" announcement' },
       { label: 'Team Stand-down', value: 'Code team notified to return to normal duties' },
       { label: 'Equipment Check', value: 'Investigate and repair malfunctioning equipment' },
-      { label: 'Documentation', value: 'Document false alarm and cause' },
+      { label: 'False Alarm Documentation', value: 'Document false alarm and cause' },
     ];
     for (const { label, value } of falseAlarmProtocol) {
       assert.strictEqual(await getText(driver, label), value);
@@ -481,7 +481,7 @@ describe('Feature: Code Blue Response', function () {
     //   | System Calibration    | Adjust sensitivity to prevent false alarms |
     //   | Audit Trail          | Record incident for system improvement     |
     const systemImprovements = [
-      { label: 'Equipment Maintenance', value: 'Immediate repair of faulty equipment' },
+      { label: 'Equipment Maintenance Repair', value: 'Immediate repair of faulty equipment' },
       { label: 'Staff Education', value: 'Review proper code blue activation' },
       { label: 'System Calibration', value: 'Adjust sensitivity to prevent false alarms' },
       { label: 'Audit Trail', value: 'Record incident for system improvement' },

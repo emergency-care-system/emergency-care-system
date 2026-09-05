@@ -271,6 +271,13 @@ describe('Feature: Real-time Dashboard', function () {
     // When I access the dashboard on my mobile device
     await login(driver, 'Charge Nurse Williams', { mobile: true });
 
+    // This is a second, mid-scenario login (the desktop login from
+    // beforeEach already happened), so the dashboard reloads back to its
+    // Overview screen -- reselect the panel before checking its content.
+    const mobileNavLink = await waitForTestId(driver, 'Nav Real-time Dashboard');
+    await mobileNavLink.click();
+    await waitForTestId(driver, 'Real-time Dashboard Panel');
+
     // Then the system provides a mobile-optimized view:
     const mobileFeatureRows = [
       { label: 'Summary Cards', value: 'Key metrics in swipeable card format' },

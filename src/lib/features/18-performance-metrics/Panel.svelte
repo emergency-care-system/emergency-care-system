@@ -111,7 +111,7 @@
 
 	const improvementOpportunityRows: Row[] = [
 		{ label: 'Trauma Communication', value: '82.3%' },
-		{ label: 'Pain Management', value: '79.1%' },
+		{ label: 'Pain Management Improvement Opportunity', value: '79.1%' },
 		{ label: 'Young Adult Experience', value: '85.1%' }
 	];
 

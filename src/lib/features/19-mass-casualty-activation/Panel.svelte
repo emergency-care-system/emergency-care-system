@@ -150,7 +150,7 @@
 	const staffingStrategyRows: Row[] = [
 		{ label: 'Shift Hold', value: 'Day shift staff remain for incident response' },
 		{ label: 'Double Coverage', value: 'Both shifts work together during surge' },
-		{ label: 'Incident Command', value: 'Clear leadership chain established' },
+		{ label: 'Incident Command Continuity', value: 'Clear leadership chain established' },
 		{ label: 'Communication', value: 'All staff briefed on roles and responsibilities' }
 	];
 
@@ -158,7 +158,7 @@
 		{ label: 'Handoff Procedures', value: 'Suspended until incident resolution' },
 		{ label: 'Staffing Ratios', value: 'Enhanced coverage with both shifts' },
 		{ label: 'Leadership Structure', value: 'Incident commander takes operational control' },
-		{ label: 'Documentation', value: 'Emergency documentation procedures active' }
+		{ label: 'Modified Documentation', value: 'Emergency documentation procedures active' }
 	];
 
 	const drillFeatureRows: Row[] = [
