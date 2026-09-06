@@ -9,11 +9,18 @@ educational purposes. This is not a real emergency department management system.
 
 ## Demo app
 
-`spec/features/*.feature` (22 Gherkin feature files) drove two things built in
-this repo:
+`spec/features/*.feature` (22 Gherkin feature files) drove three things built
+in this repo:
 
 - `tests-with-selenium-javascript/` — a Selenium WebDriver + Mocha test suite,
   one file per feature.
+- `tests-with-playwright-javascript/` — the same 171 scenarios, one-to-one,
+  implemented with Playwright instead. Its `support/` helpers mirror the
+  Selenium ones (`login`, `verifySystemIsOperational`, `fillField`,
+  `fillFields`, `getText`, `locator`, `waitForTestId`) but take a Playwright
+  `page` instead of a Selenium `driver`, and lean on `page.getByTestId(...)`
+  since the app's `data-testid` convention is also Playwright's default
+  locator strategy.
 - `src/` — a real, running SvelteKit 5 app implementing those 22 features as
   a single-page dashboard, styled with
   [Lily Design System](https://www.npmjs.com/package/lily-design-system-svelte-headless)
@@ -27,8 +34,9 @@ Run it:
 
 ```sh
 pnpm install
-pnpm run dev       # app at http://localhost:5173
-pnpm test          # BASE_URL=http://localhost:5173 npx mocha, against a running dev server
+pnpm run dev              # app at http://localhost:5173
+pnpm run test:selenium    # BASE_URL=http://localhost:5173 npx mocha, against a running dev server
+pnpm run test:playwright  # npx playwright test -- starts its own dev server if BASE_URL isn't set
 ```
 
 Sign in with `doctor@example.com`, `nurse@example.com`, or
@@ -44,15 +52,22 @@ Selenium tests' own precondition checks, goes through this same explicit
 sign-in screen.
 
 After login, pick a feature from the sidebar nav — only one feature's panel
-is mounted at a time. The Selenium tests do the same: each test's `beforeEach`
+is mounted at a time. Both test suites do the same: each test's `beforeEach`
 logs in, then clicks that feature's `data-testid="nav-<slug>"` link before
-interacting with the panel.
+interacting with the panel. Each `.test.js` file in either suite launches its
+own dedicated browser for its scenarios (`test.beforeAll`/`before`, closed in
+`test.afterAll`/`after`) — a shared browser handling many files' logins
+back-to-back against one dev server proved unreliable in practice, and one
+worker running files one at a time with its own fresh browser per file is
+both fast and reliable. See `playwright.config.js` for why Playwright is
+also pinned to a single worker rather than run in parallel.
 
 **Known limitations**, honestly: the 22 test files were themselves generated
 independently (one file per feature, in parallel), so a handful of scenarios
 assert exact wording that was invented by that generation process rather than
 drawn from the `.feature` file's own quoted text. As of the last full run,
-all 171 scenarios pass against the live app.
+all 171 scenarios pass against the live app — in both `tests-with-selenium-javascript/`
+and `tests-with-playwright-javascript/`.
 
 ## Business use cases
 
