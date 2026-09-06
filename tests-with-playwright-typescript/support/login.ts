@@ -1,0 +1,50 @@
+// Logs in as the identity named in a feature file's Background step, e.g.
+//   Given I am logged in as a registration clerk
+//   Given I am logged in as "Dr. Smith"
+//   Given I am logged in as "Dr. Smith" on the mobile app
+//
+// `identity` is the exact text that follows "logged in as" (quotes
+// stripped). `options.mobile` mirrors an "on the mobile app" suffix.
+
+import type { Page } from '@playwright/test';
+import { BASE_URL } from './config.js';
+
+export type LoginOptions = {
+  mobile?: boolean;
+};
+
+export async function login(page: Page, identity: string, options: LoginOptions = {}): Promise<void> {
+  const url = options.mobile ? `${BASE_URL}/login?viewport=mobile` : `${BASE_URL}/login`;
+  await page.goto(url);
+
+  // Two attempts: SvelteKit server-renders the login form before its client
+  // JS finishes hydrating, so a fill()+click() right after the form becomes
+  // visible can in principle land before hydration attaches the submit
+  // handler, falling back to a plain native form submission (the inputs
+  // have no `name`, so it just reloads the still-unhydrated login page with
+  // an empty query string) instead of the SPA login. If the first attempt
+  // doesn't reach the authenticated shell quickly, retry once now that the
+  // page has settled.
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    await page.getByTestId('login-identity').fill(identity);
+    await page.getByTestId('login-submit').click();
+
+    try {
+      // "app-root" is the root layout wrapper -- it's present on the login
+      // page itself too, so waiting for it wouldn't confirm login succeeded.
+      // Wait for the sidebar nav instead, which only renders once
+      // authenticated.
+      await page.getByTestId('feature-nav').waitFor({ timeout: attempt === 1 ? 4000 : 10000 });
+      return;
+    } catch (err) {
+      if (attempt === 2) throw err;
+    }
+  }
+}
+
+// Confirms the Background precondition `Given the emergency care system is
+// operational` by loading the app and waiting for its shell to render.
+export async function verifySystemIsOperational(page: Page): Promise<void> {
+  await page.goto(BASE_URL);
+  await page.getByTestId('app-root').waitFor();
+}

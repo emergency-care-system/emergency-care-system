@@ -1,0 +1,5 @@
+{
+  "spec": "tests-with-selenium-typescript/**/*.test.ts",
+  "require": "tsx",
+  "timeout": 20000
+}

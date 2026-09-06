@@ -14,7 +14,9 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "mocha",
     "test:selenium": "mocha",
-    "test:playwright": "playwright test"
+    "test:selenium-typescript": "mocha --config .mocharc.selenium-typescript.json",
+    "test:playwright": "playwright test",
+    "test:playwright-typescript": "playwright test --config=playwright.typescript.config.ts"
   },
   "dependencies": {
     "lily-design-system-svelte-headless": "^0.3.1",
@@ -27,11 +29,15 @@
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tailwindcss/vite": "^4.3.0",
     "@playwright/test": "^1.63.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^26.4.1",
+    "@types/selenium-webdriver": "^4.35.6",
     "mocha": "^10.7.3",
     "selenium-webdriver": "^4.25.0",
     "svelte": "^5.56.1",
     "svelte-check": "^4.6.0",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
   }
