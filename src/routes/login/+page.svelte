@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Login page for the ED Command Center demo.
+	// Login page for the Emergency Care Command Center demo.
 	//
 	// This is a fictitious, client-only authentication flow (see
 	// src/lib/stores/session.svelte.ts and src/lib/data/directory.ts).
@@ -276,7 +276,7 @@
 <div class="login-page">
 	<form class="card login-card" data-testid="login-form" onsubmit={handleSubmit}>
 		<h1 class="panel-heading">Sign in</h1>
-		<p class="panel-subtitle">Emergency Department Management System — demo login</p>
+		<p class="panel-subtitle">Emergency Care System — demo login</p>
 		<p class="demo-hint">
 			Try <code>doctor@example.com</code>, <code>nurse@example.com</code>, or
 			<code>administrator@example.com</code> — password <code>secret</code> — or type any role

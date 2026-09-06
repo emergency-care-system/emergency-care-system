@@ -62,7 +62,7 @@ Feature: Audit Trail
   So that I can ensure HIPAA compliance and investigate any unauthorized access to protected health information
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Compliance Officer Martinez"
     And the audit logging system is active and capturing all access events
     And patient record access is being monitored in real-time

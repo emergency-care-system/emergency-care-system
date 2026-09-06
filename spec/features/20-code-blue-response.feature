@@ -62,7 +62,7 @@ Feature: Code Blue Response
   So that the code team can respond immediately with proper coordination and documentation
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And the code blue alert system is active
     And the resuscitation documentation module is enabled
     And all display devices are connected to the alert network

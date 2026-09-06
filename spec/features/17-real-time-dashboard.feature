@@ -60,7 +60,7 @@ Feature: Real-time Dashboard
   So that I can make informed decisions about patient flow, staffing, and resource allocation
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Charge Nurse Williams"
     And the real-time dashboard module is active
     And automatic data refresh is enabled at 30-second intervals

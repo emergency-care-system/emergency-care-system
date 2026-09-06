@@ -56,11 +56,11 @@
 
 Feature: User Authentication
   As a healthcare provider
-  I want to securely log into the ED management system
+  I want to securely log into the emergency care system
   So that I can access patient information and perform my clinical duties with proper authorization
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And the authentication module is active
     And the badge scanning system is functional
     And user credentials database is accessible

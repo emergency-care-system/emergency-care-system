@@ -36,7 +36,7 @@ Feature: Walk-in Patient Registration
   So that they can be properly identified and queued for triage
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as a registration clerk
 
   Scenario: Successfully register a new walk-in patient

@@ -46,7 +46,7 @@ Feature: Initial Triage Assessment
   So that they are properly prioritized based on their medical acuity
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as a triage nurse
     And the ESI (Emergency Severity Index) scoring module is active
 

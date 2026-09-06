@@ -44,7 +44,7 @@ Feature: Ambulance Arrival Registration
   So that they can receive immediate medical care while maintaining proper documentation
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as registration staff
     And the "unknown patient" registration module is available
 

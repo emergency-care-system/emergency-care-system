@@ -64,7 +64,7 @@ Feature: Patient Discharge
   So that patients receive proper instructions and departmental processes are streamlined
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Dr. Johnson"
     And the discharge module is active
     And billing integration is enabled

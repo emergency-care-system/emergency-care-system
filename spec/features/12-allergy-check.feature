@@ -62,7 +62,7 @@ Feature: Allergy Check
   So that I can prevent allergic reactions and ensure patient safety
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Dr. Smith"
     And the allergy checking module is active
     And the drug interaction database is up-to-date

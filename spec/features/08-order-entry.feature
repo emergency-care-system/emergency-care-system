@@ -60,7 +60,7 @@ Feature: Order Entry
   So that they are automatically routed to appropriate departments and nursing workflow
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Dr. Smith"
     And the electronic order entry module is active
     And departmental interfaces (lab, radiology, pharmacy) are connected

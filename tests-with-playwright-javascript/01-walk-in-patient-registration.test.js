@@ -32,7 +32,7 @@ test.describe('Feature: Walk-in Patient Registration', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as a registration clerk
     await verifySystemIsOperational(page);
     await login(page, 'a registration clerk');

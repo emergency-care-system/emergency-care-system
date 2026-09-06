@@ -26,7 +26,7 @@ describe('Feature: Performance Metrics', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as "ED Manager Thompson"
     //   And the reporting module has access to historical data (assumed pre-seeded test data)
     //   And the performance metrics calculation engine is enabled (assumed pre-seeded test data)

@@ -56,7 +56,7 @@ Feature: Bed Status Updates
   So that housekeeping is notified and bed availability is accurately tracked
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as a nurse
     And the bed management module is active
     And housekeeping notification system is enabled

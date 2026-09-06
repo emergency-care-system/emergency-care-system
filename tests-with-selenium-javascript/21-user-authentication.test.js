@@ -30,7 +30,7 @@ describe('Feature: User Authentication', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the authentication module is active
     //   And the badge scanning system is functional
     //   And user credentials database is accessible

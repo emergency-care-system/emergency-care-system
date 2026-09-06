@@ -1,4 +1,4 @@
-# Emergency deparment management system
+# Emergency care system
 
 Tech stack:
 

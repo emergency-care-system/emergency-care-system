@@ -60,7 +60,7 @@ Feature: Dynamic Queue Updates
   So that critical patients receive immediate priority and wait times remain accurate
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And the dynamic queue management module is active
     And the ESI (Emergency Severity Index) prioritization system is enabled
     And 15 patients are currently waiting to be seen

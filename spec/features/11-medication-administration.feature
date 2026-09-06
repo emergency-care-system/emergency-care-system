@@ -60,7 +60,7 @@ Feature: Medication Administration
   So that I can ensure the five rights of medication administration and maintain accurate documentation
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Nurse Johnson"
     And the medication administration module is active
     And the barcode scanning system is functional

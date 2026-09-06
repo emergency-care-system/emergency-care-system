@@ -60,7 +60,7 @@ Feature: Critical Lab Alert
   So that life-threatening conditions can be identified and treated without delay
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And the critical value alert system is enabled
     And laboratory interfaces are functioning
     And all patient displays are connected to the alert system

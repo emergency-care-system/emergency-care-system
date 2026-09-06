@@ -64,7 +64,7 @@ Feature: Discharge Follow-up
   So that patients receive proper continuity of care and adhere to treatment plans
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And the patient portal is connected and functional
     And the follow-up scheduling module is active
     And automated reminder systems are enabled

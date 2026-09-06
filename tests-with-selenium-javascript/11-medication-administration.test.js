@@ -26,7 +26,7 @@ describe('Feature: Medication Administration', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as "Nurse Johnson"
     //   And the medication administration module is active
     //   And the barcode scanning system is functional

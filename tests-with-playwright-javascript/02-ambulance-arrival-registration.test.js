@@ -28,7 +28,7 @@ test.describe('Feature: Ambulance Arrival Registration', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as registration staff
     //   And the "unknown patient" registration module is available
     await verifySystemIsOperational(page);

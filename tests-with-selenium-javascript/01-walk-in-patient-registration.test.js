@@ -26,7 +26,7 @@ describe('Feature: Walk-in Patient Registration', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as a registration clerk
     await verifySystemIsOperational(driver);
     await login(driver, 'a registration clerk');

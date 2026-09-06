@@ -28,7 +28,7 @@ test.describe('Feature: Allergy Check', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as "Dr. Smith"
     //   And the allergy checking module is active
     //   And the drug interaction database is up-to-date

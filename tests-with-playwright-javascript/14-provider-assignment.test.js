@@ -32,7 +32,7 @@ test.describe('Feature: Provider Assignment', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the provider assignment module is active
     //   And provider workload tracking is enabled
     //   And mobile notification system is functional

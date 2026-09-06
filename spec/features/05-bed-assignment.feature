@@ -54,7 +54,7 @@ Feature: Bed Assignment
   So that I can optimize patient flow and ensure appropriate care placement
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as a charge nurse
     And the bed management module is active
     And the patient prioritization algorithm is enabled

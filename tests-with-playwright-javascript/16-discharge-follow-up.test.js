@@ -32,7 +32,7 @@ test.describe('Feature: Discharge Follow-up', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the patient portal is connected and functional
     //   And the follow-up scheduling module is active
     //   And automated reminder systems are enabled

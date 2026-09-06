@@ -1,9 +1,9 @@
 {
-  "name": "emergency-department-management-system-example",
+  "name": "emergency-care-system",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "An example ED management system: a SvelteKit demo app (fictitious data, no real backend), its specs, skills, and Selenium test suite.",
+  "description": "An example emergency care system: a SvelteKit demo app (fictitious data, no real backend), its specs, skills, and Selenium test suite.",
   "packageManager": "pnpm@11.0.8",
   "scripts": {
     "dev": "vite dev",

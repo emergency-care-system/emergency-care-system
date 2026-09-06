@@ -62,7 +62,7 @@ Feature: Mass Casualty Activation
   So that the ED can efficiently manage multiple critically injured patients and maximize survival outcomes
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "Charge Nurse Williams"
     And the mass casualty incident (MCI) module is available
     And emergency contact systems are enabled

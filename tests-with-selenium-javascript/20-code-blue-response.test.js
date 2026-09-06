@@ -26,7 +26,7 @@ describe('Feature: Code Blue Response', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the code blue alert system is active
     //   And the resuscitation documentation module is enabled
     //   And all display devices are connected to the alert network

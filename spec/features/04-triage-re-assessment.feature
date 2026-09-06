@@ -52,7 +52,7 @@ Feature: Triage Re-assessment
   So that their priority can be adjusted if their condition has changed
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as a triage nurse
     And the automatic reassessment alerts are enabled
 

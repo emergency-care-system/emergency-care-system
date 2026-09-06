@@ -114,7 +114,7 @@
 					Role: {sessionState.current.role} — pick a feature from the left to get started.
 				</p>
 				<p>
-					This is a demonstration Emergency Department management system. All data shown
+					This is a demonstration emergency care system. All data shown
 					throughout the app is fictitious and exists only in this browser session.
 				</p>
 

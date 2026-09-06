@@ -26,7 +26,7 @@ describe('Feature: Real-time Dashboard', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as "Charge Nurse Williams"
     //   And the real-time dashboard module is active (assumed pre-seeded test data)
     //   And automatic data refresh is enabled at 30-second intervals (assumed pre-seeded test data)

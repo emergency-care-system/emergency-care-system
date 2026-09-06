@@ -26,7 +26,7 @@ describe('Feature: Critical Lab Alert', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the critical value alert system is enabled
     //   And laboratory interfaces are functioning
     //   And all patient displays are connected to the alert system

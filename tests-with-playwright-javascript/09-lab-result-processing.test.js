@@ -32,7 +32,7 @@ test.describe('Feature: Lab Result Processing', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And the HL7 interface with the laboratory system is active
     //   And critical value alert system is enabled
     //   And physician notification system is functional

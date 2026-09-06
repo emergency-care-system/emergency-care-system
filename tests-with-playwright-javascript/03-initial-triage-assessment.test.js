@@ -28,7 +28,7 @@ test.describe('Feature: Initial Triage Assessment', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as a triage nurse
     //   And the ESI (Emergency Severity Index) scoring module is active
     await verifySystemIsOperational(page);

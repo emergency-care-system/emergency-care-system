@@ -28,7 +28,7 @@ test.describe('Feature: Bed Status Updates', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as a nurse
     //   And the bed management module is active
     //   And housekeeping notification system is enabled

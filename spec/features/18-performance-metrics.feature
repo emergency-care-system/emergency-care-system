@@ -58,7 +58,7 @@ Feature: Performance Metrics
   So that I can evaluate departmental efficiency, quality of care, and identify improvement opportunities
 
   Background:
-    Given the ED management system is operational
+    Given the emergency care system is operational
     And I am logged in as "ED Manager Thompson"
     And the reporting module has access to historical data
     And the performance metrics calculation engine is enabled

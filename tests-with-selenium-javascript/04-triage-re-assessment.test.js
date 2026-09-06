@@ -26,7 +26,7 @@ describe('Feature: Triage Re-assessment', function () {
 
   beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as a triage nurse
     //   And the automatic reassessment alerts are enabled
     await verifySystemIsOperational(driver);

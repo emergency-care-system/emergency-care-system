@@ -28,7 +28,7 @@ test.describe('Feature: Physician Assessment', () => {
 
   test.beforeEach(async () => {
     // Background:
-    //   Given the ED management system is operational
+    //   Given the emergency care system is operational
     //   And I am logged in as "Dr. Smith" on the mobile app
     //   And the patient chart access module is enabled
     //   And real-time data synchronization is active

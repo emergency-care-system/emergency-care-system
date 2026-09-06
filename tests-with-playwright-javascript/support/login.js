@@ -12,17 +12,32 @@ export async function login(page, identity, options = {}) {
   const url = options.mobile ? `${BASE_URL}/login?viewport=mobile` : `${BASE_URL}/login`;
   await page.goto(url);
 
-  await page.getByTestId('login-identity').fill(identity);
-  await page.getByTestId('login-submit').click();
+  // Two attempts: SvelteKit server-renders the login form before its client
+  // JS finishes hydrating, so a fill()+click() right after the form becomes
+  // visible can in principle land before hydration attaches the submit
+  // handler, falling back to a plain native form submission (the inputs
+  // have no `name`, so it just reloads the still-unhydrated login page with
+  // an empty query string) instead of the SPA login. If the first attempt
+  // doesn't reach the authenticated shell quickly, retry once now that the
+  // page has settled.
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    await page.getByTestId('login-identity').fill(identity);
+    await page.getByTestId('login-submit').click();
 
-  // "app-root" is the root layout wrapper -- it's present on the login page
-  // itself too, so waiting for it here would resolve immediately without
-  // actually confirming the login succeeded. Wait for the sidebar nav
-  // instead, which only renders once authenticated.
-  await page.getByTestId('feature-nav').waitFor();
+    try {
+      // "app-root" is the root layout wrapper -- it's present on the login
+      // page itself too, so waiting for it wouldn't confirm login succeeded.
+      // Wait for the sidebar nav instead, which only renders once
+      // authenticated.
+      await page.getByTestId('feature-nav').waitFor({ timeout: attempt === 1 ? 4000 : 10000 });
+      return;
+    } catch (err) {
+      if (attempt === 2) throw err;
+    }
+  }
 }
 
-// Confirms the Background precondition `Given the ED management system is
+// Confirms the Background precondition `Given the emergency care system is
 // operational` by loading the app and waiting for its shell to render.
 export async function verifySystemIsOperational(page) {
   await page.goto(BASE_URL);
