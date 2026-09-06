@@ -1,0 +1,14 @@
+# Python dependencies for tests-with-selenium-python/ and
+# tests-with-playwright-python/.
+#
+# Setup:
+#   pip install -r requirements.txt
+#   playwright install chromium   # downloads Playwright's browser binary
+#
+# Selenium uses Selenium Manager (bundled with the selenium package) to
+# auto-detect the installed Chrome and download a matching driver, so no
+# separate driver install step is needed for that suite.
+
+selenium~=4.48
+playwright~=1.62
+pytest~=9.1

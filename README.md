@@ -9,10 +9,10 @@ educational purposes. This is not a real emergency care system.
 
 ## Demo app
 
-`spec/features/*.feature` (22 Gherkin feature files) drove five things built
-in this repo — the same 171 scenarios, ported one-to-one across four test
-suites that pair two automation libraries with two languages, plus the app
-itself:
+`spec/features/*.feature` (22 Gherkin feature files) drove seven things built
+in this repo — the same 171 scenarios, ported one-to-one across six test
+suites that pair three automation libraries with three languages, plus the
+app itself:
 
 - `tests-with-selenium-javascript/` — Selenium WebDriver + Mocha, in
   JavaScript. The original suite; every other suite is a mechanical port of
@@ -30,6 +30,15 @@ itself:
 - `tests-with-playwright-typescript/` — the Playwright suite in TypeScript
   (`Page`, `Locator`, `Browser`, ...). Playwright runs `.ts` files natively,
   no extra loader needed.
+- `tests-with-selenium-python/` — the Selenium suite in Python, using
+  `pytest` as the runner (one `Test*` class per feature, one `test_*` method
+  per scenario) and Selenium's own Selenium Manager for the Chrome driver.
+  Its `support/` package mirrors the JS one (`login`,
+  `verify_system_is_operational`, `fill_field`, `fill_fields`, `get_text`,
+  `locator`, `wait_for_test_id`).
+- `tests-with-playwright-python/` — the Playwright suite in Python, also
+  under `pytest`, using Playwright's synchronous API (`sync_playwright`,
+  `Page`, `Locator`) and `page.get_by_test_id(...)`.
 - `src/` — a real, running SvelteKit 5 app implementing those 22 features as
   a single-page dashboard, styled with
   [Lily Design System](https://www.npmjs.com/package/lily-design-system-svelte-headless)
@@ -48,6 +57,12 @@ pnpm run test:selenium              # Mocha (JS), against a running dev server
 pnpm run test:selenium-typescript   # Mocha (TS, via tsx), against a running dev server
 pnpm run test:playwright            # Playwright (JS) -- starts its own dev server if BASE_URL isn't set
 pnpm run test:playwright-typescript # Playwright (TS) -- same, via playwright.typescript.config.ts
+
+# Python suites need their own dependencies (see requirements.txt):
+pip install -r requirements.txt
+playwright install chromium
+BASE_URL=http://localhost:5173 pnpm run test:selenium-python    # pytest + Selenium, against a running dev server
+BASE_URL=http://localhost:5173 pnpm run test:playwright-python  # pytest + Playwright, against a running dev server
 ```
 
 Sign in with `doctor@example.com`, `nurse@example.com`, or
@@ -63,7 +78,7 @@ Selenium tests' own precondition checks, goes through this same explicit
 sign-in screen.
 
 After login, pick a feature from the sidebar nav — only one feature's panel
-is mounted at a time. All four test suites do the same: each test's
+is mounted at a time. All six test suites do the same: each test's
 `beforeEach` logs in, then clicks that feature's `data-testid="nav-<slug>"`
 link before interacting with the panel. Each test file in every suite
 launches its own dedicated browser for its scenarios (`test.beforeAll`/
@@ -78,7 +93,7 @@ single worker rather than run in parallel.
 independently (one file per feature, in parallel), so a handful of scenarios
 assert exact wording that was invented by that generation process rather than
 drawn from the `.feature` file's own quoted text. As of the last full run,
-all 171 scenarios pass against the live app in all four suites.
+all 171 scenarios pass against the live app in all six suites.
 
 ## Business use cases
 

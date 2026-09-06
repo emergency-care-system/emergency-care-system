@@ -16,7 +16,9 @@
     "test:selenium": "mocha",
     "test:selenium-typescript": "mocha --config .mocharc.selenium-typescript.json",
     "test:playwright": "playwright test",
-    "test:playwright-typescript": "playwright test --config=playwright.typescript.config.ts"
+    "test:playwright-typescript": "playwright test --config=playwright.typescript.config.ts",
+    "test:selenium-python": "pytest tests-with-selenium-python",
+    "test:playwright-python": "pytest tests-with-playwright-python"
   },
   "dependencies": {
     "lily-design-system-svelte-headless": "^0.3.1",
