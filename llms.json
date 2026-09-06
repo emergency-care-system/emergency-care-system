@@ -1,0 +1,113 @@
+{
+	"$comment": "There is no ratified JSON counterpart to llms.txt (https://llmstxt.org) -- this file is a structured, non-standard mirror of llms.txt for tools that prefer JSON over Markdown. llms.txt is the canonical version; keep this in sync with it and with spec/index.md.",
+	"name": "Emergency Care System",
+	"url": "https://github.com/emergency-care-system/emergency-care-system",
+	"summary": "A public, free, open-source demonstration of how to plan an emergency care system, from higher-level use cases to lower-level test automation. All data anywhere in the repo is synthetic; this is not a real emergency care system.",
+	"sections": [
+		{
+			"title": "Start here",
+			"links": [
+				{
+					"title": "AGENTS.md",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/AGENTS.md",
+					"description": "Instructions for AI coding agents working in this repository."
+				},
+				{
+					"title": "spec/index.md",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/index.md",
+					"description": "Tech stack, directory map, package manager, authentication, and how to add a new feature."
+				},
+				{
+					"title": "README.md",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/README.md",
+					"description": "Project overview, setup, and how to run the app and its test suites."
+				}
+			]
+		},
+		{
+			"title": "Specification",
+			"links": [
+				{
+					"title": "spec/features/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/spec/features",
+					"description": "The 22 Gherkin feature files -- the single source of truth for what each feature does."
+				},
+				{
+					"title": "spec/testing.md",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md",
+					"description": "The six test suites' shared data-testid contract, architecture rules, and how to port a change across all six."
+				}
+			]
+		},
+		{
+			"title": "The app",
+			"links": [
+				{
+					"title": "src/lib/features/registry.ts",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/src/lib/features/registry.ts",
+					"description": "The registry of all 22 feature panels."
+				},
+				{
+					"title": "src/lib/data/directory.ts",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/src/lib/data/directory.ts",
+					"description": "The demo login identities and scripted authentication scenarios."
+				}
+			]
+		},
+		{
+			"title": "Test suites",
+			"links": [
+				{
+					"title": "tests-with-selenium-javascript/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-javascript",
+					"description": "Selenium WebDriver + Mocha, in JavaScript -- the reference suite every other suite ports."
+				},
+				{
+					"title": "tests-with-playwright-javascript/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-javascript",
+					"description": "Playwright, in JavaScript."
+				},
+				{
+					"title": "tests-with-selenium-typescript/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-typescript",
+					"description": "Selenium WebDriver + Mocha, in TypeScript."
+				},
+				{
+					"title": "tests-with-playwright-typescript/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-typescript",
+					"description": "Playwright, in TypeScript."
+				},
+				{
+					"title": "tests-with-selenium-python/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-python",
+					"description": "Selenium WebDriver + pytest, in Python."
+				},
+				{
+					"title": "tests-with-playwright-python/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-python",
+					"description": "Playwright + pytest, in Python."
+				}
+			]
+		},
+		{
+			"title": "Skills",
+			"links": [
+				{
+					"title": "skills/index.md",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/skills/index.md",
+					"description": "Claude Code skills used while building this repo."
+				}
+			]
+		},
+		{
+			"title": "Related",
+			"links": [
+				{
+					"title": "emergency-care-system.github.io",
+					"url": "https://github.com/emergency-care-system/emergency-care-system.github.io",
+					"description": "A companion SvelteKit site documenting this repo's features and test suites for a general audience (separate repository, not yet deployed)."
+				}
+			]
+		}
+	]
+}

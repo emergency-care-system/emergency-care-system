@@ -1,0 +1,45 @@
+# Emergency Care System
+
+> A public, free, open-source demonstration of how to plan an emergency
+> care system, from higher-level use cases to lower-level test
+> automation. All data anywhere in the repo is synthetic; this is not a
+> real emergency care system.
+
+This file follows the [llms.txt](https://llmstxt.org) convention: a map
+of this repository's key files for AI agents and LLMs, kept in sync with
+`llms.json` (same content, structured) and with
+[`spec/index.md`](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/index.md),
+which is the canonical source of truth for both files.
+
+## Start here
+
+- [AGENTS.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/AGENTS.md): instructions for AI coding agents working in this repository.
+- [spec/index.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/index.md): tech stack, directory map, package manager, authentication, and how to add a new feature.
+- [README.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/README.md): project overview, setup, and how to run the app and its test suites.
+
+## Specification
+
+- [spec/features/](https://github.com/emergency-care-system/emergency-care-system/tree/main/spec/features): the 22 Gherkin feature files -- the single source of truth for what each feature does.
+- [spec/testing.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md): the six test suites' shared `data-testid` contract, architecture rules, and how to port a change across all six.
+
+## The app
+
+- [src/lib/features/registry.ts](https://github.com/emergency-care-system/emergency-care-system/blob/main/src/lib/features/registry.ts): the registry of all 22 feature panels.
+- [src/lib/data/directory.ts](https://github.com/emergency-care-system/emergency-care-system/blob/main/src/lib/data/directory.ts): the demo login identities and scripted authentication scenarios.
+
+## Test suites
+
+- [tests-with-selenium-javascript/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-javascript): Selenium WebDriver + Mocha, in JavaScript -- the reference suite every other suite ports.
+- [tests-with-playwright-javascript/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-javascript): Playwright, in JavaScript.
+- [tests-with-selenium-typescript/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-typescript): Selenium WebDriver + Mocha, in TypeScript.
+- [tests-with-playwright-typescript/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-typescript): Playwright, in TypeScript.
+- [tests-with-selenium-python/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-python): Selenium WebDriver + pytest, in Python.
+- [tests-with-playwright-python/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-python): Playwright + pytest, in Python.
+
+## Skills
+
+- [skills/index.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/skills/index.md): Claude Code skills used while building this repo.
+
+## Related
+
+- [emergency-care-system.github.io](https://github.com/emergency-care-system/emergency-care-system.github.io): a companion SvelteKit site documenting this repo's features and test suites for a general audience (separate repository, not yet deployed).
