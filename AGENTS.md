@@ -48,6 +48,13 @@ see `spec/index.md`. The two Python suites are the one exception (`pip`).
 
 ## Working conventions
 
+- **Automatic commit and push are enabled.** Claude (and other AI coding
+  agents) may commit and push routine work in this repository
+  autonomously, without asking first — see
+  [`spec/index.md`](spec/index.md#git-workflow) for the git-hygiene
+  expectations that still apply (branch off `main`, clear messages,
+  fast-forward merge back). Force-pushes and rewriting shared history
+  still call for asking first.
 - **Specification-driven.** `spec/features/*.feature` is the single
   source of truth for what a feature does. The app panel and all six
   test suites are built to match it, not the other way around — if a

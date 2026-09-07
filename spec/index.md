@@ -36,6 +36,21 @@ version). The two Python test suites are the one exception — they use
 `pip`/`requirements.txt`, since there is no Python equivalent of pnpm in
 this stack; see `testing.md`.
 
+## Git workflow
+
+Automatic commit and automatic push are enabled for AI coding agents in
+this repository: Claude (and other agents) may commit and push changes
+autonomously, without asking for confirmation first, for routine work
+here. This is a deliberate, repo-specific override of the general
+default of asking before pushing.
+
+Still keep the git hygiene already established in this repo's history:
+branch off `main` before committing (never commit directly to `main`),
+write a clear commit message, then fast-forward merge the branch back
+into `main` and delete it. Force-pushes, rewriting shared history, or
+deleting remote branches/tags still call for asking first — those are
+hard to reverse in a way a plain commit-and-push is not.
+
 ## Directory map
 
 - `spec/features/*.feature` — the 22 Gherkin feature files. This is
