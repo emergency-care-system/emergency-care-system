@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Login page for the Emergency Care Command Center demo.
+	// Login page for the Emergency Care System demo.
 	//
 	// This is a fictitious, client-only authentication flow (see
 	// src/lib/stores/session.svelte.ts and src/lib/data/directory.ts).
@@ -11,7 +11,7 @@
 	//    and land on the dashboard.
 	// 2. Four narrower demo accounts (sjohnson, mchen, awilson, pmartinez)
 	//    each replay one fully scripted scenario from
-	//    spec/features/21-user-authentication.feature -- successful login,
+	//    tests-with-given-when-then-features/21-user-authentication.feature -- successful login,
 	//    wrong password, account lockout, and an expired password -- with
 	//    the exact detail that feature describes, shown right here on the
 	//    login page rather than redirecting.
@@ -138,7 +138,7 @@
 		goto('/');
 	}
 
-	// Successful nurse login (sjohnson) -- spec/features/21-user-authentication.feature,
+	// Successful nurse login (sjohnson) -- tests-with-given-when-then-features/21-user-authentication.feature,
 	// "Successful nurse login with username, password, and badge scan".
 	const authenticationChecks: Row[] = [
 		{ label: 'Username Validation', value: 'Valid - User exists in system' },

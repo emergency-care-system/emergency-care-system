@@ -18,12 +18,12 @@
 </script>
 
 <svelte:head>
-	<title>Emergency Care Command Center</title>
+	<title>Emergency Care System</title>
 </svelte:head>
 
 <div data-testid="app-root" class="app-shell">
 	<header class="top-bar">
-		<a href="/" class="brand">🏥 Emergency Care Command Center</a>
+		<a href="/" class="brand">🏥 Emergency Care System</a>
 		{#if sessionState.current}
 			<div class="session-info">
 				<span data-testid="current-identity">{sessionState.current.identity}</span>
