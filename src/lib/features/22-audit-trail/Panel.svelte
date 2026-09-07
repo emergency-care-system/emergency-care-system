@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/22-audit-trail.feature.
+	// Panel for tests-with-given-when-then-features/22-audit-trail.feature.
 	//
 	// Fictitious, client-only audit trail demo for a compliance officer. A
 	// small seed access log is shown on load. Searching for a patient and

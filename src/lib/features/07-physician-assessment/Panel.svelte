@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/07-physician-assessment.feature.
+	// Panel for tests-with-given-when-then-features/07-physician-assessment.feature.
 	//
 	// Fictitious, client-only mobile patient chart viewer for physicians. Each
 	// click of "Open patient chart" advances through a scripted sequence of

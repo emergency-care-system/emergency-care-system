@@ -15,7 +15,7 @@ source of truth for the six test suites specifically.
 
 ## Demo app
 
-`spec/features/*.feature` (22 Gherkin feature files) drove seven things built
+`tests-with-given-when-then-features/*.feature` (22 Gherkin feature files) drove seven things built
 in this repo — the same 171 scenarios, ported one-to-one across six test
 suites that pair three automation libraries with three languages, plus the
 app itself:
@@ -516,25 +516,25 @@ and validate.
 
 **Files:**
 
-* [spec/features/01-walk-in-patient-registration.feature](features/01-walk-in-patient-registration.feature)
-* [spec/features/02-ambulance-arrival-registration.feature](features/02-ambulance-arrival-registration.feature)
-* [spec/features/03-initial-triage-assessment.feature](features/03-initial-triage-assessment.feature)
-* [spec/features/04-triage-re-assessment.feature](features/04-triage-re-assessment.feature)
-* [spec/features/05-bed-assignment.feature](features/05-bed-assignment.feature)
-* [spec/features/06-bed-status-updates.feature](features/06-bed-status-updates.feature)
-* [spec/features/07-physician-assessment.feature](features/07-physician-assessment.feature)
-* [spec/features/08-order-entry.feature](features/08-order-entry.feature)
-* [spec/features/09-lab-result-processing.feature](features/09-lab-result-processing.feature)
-* [spec/features/10-critical-lab-alert.feature](features/10-critical-lab-alert.feature)
-* [spec/features/11-medication-administration.feature](features/11-medication-administration.feature)
-* [spec/features/12-allergy-check.feature](features/12-allergy-check.feature)
-* [spec/features/13-dynamic-queue-updates.feature](features/13-dynamic-queue-updates.feature)
-* [spec/features/14-provider-assignment.feature](features/14-provider-assignment.feature)
-* [spec/features/15-patient-discharge.feature](features/15-patient-discharge.feature)
-* [spec/features/16-discharge-follow-up.feature](features/16-discharge-follow-up.feature)
-* [spec/features/17-real-time-dashboard.feature](features/17-real-time-dashboard.feature)
-* [spec/features/18-performance-metrics.feature](features/18-performance-metrics.feature)
-* [spec/features/19-mass-casualty-activation.feature](features/19-mass-casualty-activation.feature)
-* [spec/features/20-code-blue-response.feature](features/20-code-blue-response.feature)
-* [spec/features/21-user-authentication.feature](features/21-user-authentication.feature)
-* [spec/features/22-audit-trail.feature](features/22-audit-trail.feature)
+* [tests-with-given-when-then-features/01-walk-in-patient-registration.feature](tests-with-given-when-then-features/01-walk-in-patient-registration.feature)
+* [tests-with-given-when-then-features/02-ambulance-arrival-registration.feature](tests-with-given-when-then-features/02-ambulance-arrival-registration.feature)
+* [tests-with-given-when-then-features/03-initial-triage-assessment.feature](tests-with-given-when-then-features/03-initial-triage-assessment.feature)
+* [tests-with-given-when-then-features/04-triage-re-assessment.feature](tests-with-given-when-then-features/04-triage-re-assessment.feature)
+* [tests-with-given-when-then-features/05-bed-assignment.feature](tests-with-given-when-then-features/05-bed-assignment.feature)
+* [tests-with-given-when-then-features/06-bed-status-updates.feature](tests-with-given-when-then-features/06-bed-status-updates.feature)
+* [tests-with-given-when-then-features/07-physician-assessment.feature](tests-with-given-when-then-features/07-physician-assessment.feature)
+* [tests-with-given-when-then-features/08-order-entry.feature](tests-with-given-when-then-features/08-order-entry.feature)
+* [tests-with-given-when-then-features/09-lab-result-processing.feature](tests-with-given-when-then-features/09-lab-result-processing.feature)
+* [tests-with-given-when-then-features/10-critical-lab-alert.feature](tests-with-given-when-then-features/10-critical-lab-alert.feature)
+* [tests-with-given-when-then-features/11-medication-administration.feature](tests-with-given-when-then-features/11-medication-administration.feature)
+* [tests-with-given-when-then-features/12-allergy-check.feature](tests-with-given-when-then-features/12-allergy-check.feature)
+* [tests-with-given-when-then-features/13-dynamic-queue-updates.feature](tests-with-given-when-then-features/13-dynamic-queue-updates.feature)
+* [tests-with-given-when-then-features/14-provider-assignment.feature](tests-with-given-when-then-features/14-provider-assignment.feature)
+* [tests-with-given-when-then-features/15-patient-discharge.feature](tests-with-given-when-then-features/15-patient-discharge.feature)
+* [tests-with-given-when-then-features/16-discharge-follow-up.feature](tests-with-given-when-then-features/16-discharge-follow-up.feature)
+* [tests-with-given-when-then-features/17-real-time-dashboard.feature](tests-with-given-when-then-features/17-real-time-dashboard.feature)
+* [tests-with-given-when-then-features/18-performance-metrics.feature](tests-with-given-when-then-features/18-performance-metrics.feature)
+* [tests-with-given-when-then-features/19-mass-casualty-activation.feature](tests-with-given-when-then-features/19-mass-casualty-activation.feature)
+* [tests-with-given-when-then-features/20-code-blue-response.feature](tests-with-given-when-then-features/20-code-blue-response.feature)
+* [tests-with-given-when-then-features/21-user-authentication.feature](tests-with-given-when-then-features/21-user-authentication.feature)
+* [tests-with-given-when-then-features/22-audit-trail.feature](tests-with-given-when-then-features/22-audit-trail.feature)

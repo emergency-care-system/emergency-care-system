@@ -1,4 +1,4 @@
-// Playwright test for spec/features/22-audit-trail.feature
+// Playwright test for tests-with-given-when-then-features/22-audit-trail.feature
 // (equivalent to tests-with-selenium-javascript/22-audit-trail.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/09-lab-result-processing.feature
+tests-with-given-when-then-features/09-lab-result-processing.feature
 (equivalent to tests-with-selenium-javascript/09-lab-result-processing.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

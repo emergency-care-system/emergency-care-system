@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/01-walk-in-patient-registration.feature.
+	// Panel for tests-with-given-when-then-features/01-walk-in-patient-registration.feature.
 	// Fictitious, client-only patient registration backed by localStorage
 	// (see $lib/data/patients.ts) so duplicate detection works realistically
 	// across scenarios within the same browser session.

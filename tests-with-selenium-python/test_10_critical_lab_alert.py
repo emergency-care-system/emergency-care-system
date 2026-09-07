@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/10-critical-lab-alert.feature
+tests-with-given-when-then-features/10-critical-lab-alert.feature
 (equivalent to tests-with-selenium-javascript/10-critical-lab-alert.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/08-order-entry.feature.
+	// Panel for tests-with-given-when-then-features/08-order-entry.feature.
 	//
 	// This is a fictitious, client-only order entry module. Several scenarios
 	// in the feature file click "Enter Order" then "Submit Orders" with no

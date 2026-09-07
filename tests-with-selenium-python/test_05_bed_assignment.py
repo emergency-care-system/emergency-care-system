@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/05-bed-assignment.feature
+tests-with-given-when-then-features/05-bed-assignment.feature
 (equivalent to tests-with-selenium-javascript/05-bed-assignment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

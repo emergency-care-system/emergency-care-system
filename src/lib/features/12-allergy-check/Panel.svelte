@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/12-allergy-check.feature.
+	// Panel for tests-with-given-when-then-features/12-allergy-check.feature.
 	//
 	// Unlike some other scripted-demo panels, most of this feature's
 	// scenarios ARE distinguishable purely from what the physician typed

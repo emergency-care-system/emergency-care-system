@@ -1,4 +1,4 @@
-"""Selenium WebDriver + pytest test for spec/features/19-mass-casualty-activation.feature
+"""Selenium WebDriver + pytest test for tests-with-given-when-then-features/19-mass-casualty-activation.feature
 (equivalent to tests-with-selenium-javascript/19-mass-casualty-activation.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

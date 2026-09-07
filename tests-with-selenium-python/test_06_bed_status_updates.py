@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/06-bed-status-updates.feature
+tests-with-given-when-then-features/06-bed-status-updates.feature
 (equivalent to tests-with-selenium-javascript/06-bed-status-updates.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

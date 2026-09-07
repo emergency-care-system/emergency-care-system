@@ -24,7 +24,7 @@ export type Patient = {
 };
 
 // A small fictitious starting roster, unrelated to any demographic values
-// used in spec/features/*.feature scenarios, so it never collides with a
+// used in tests-with-given-when-then-features/*.feature scenarios, so it never collides with a
 // scenario's own duplicate-detection input.
 const SEED_PATIENTS: Patient[] = [
 	{

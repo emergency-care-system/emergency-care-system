@@ -7,7 +7,7 @@ restate these facts — update this file, not copies of it.
 
 ## The six suites
 
-Every one of the 171 scenarios across all 22 `spec/features/*.feature`
+Every one of the 171 scenarios across all 22 `tests-with-given-when-then-features/*.feature`
 files is implemented once per suite, pairing two automation libraries
 with three languages:
 
@@ -113,7 +113,7 @@ pattern the four JS/TS npm scripts already use.
 
 ## Adding a new feature
 
-1. Write `spec/features/NN-slug.feature` first (Background + scenarios,
+1. Write `tests-with-given-when-then-features/NN-slug.feature` first (Background + scenarios,
    `As a / I want / So that`).
 2. Build the app panel (`src/lib/features/NN-slug/Panel.svelte`,
    registered in `src/lib/features/registry.ts`) with `data-testid`

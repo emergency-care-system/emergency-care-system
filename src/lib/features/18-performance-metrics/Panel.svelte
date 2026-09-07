@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/18-performance-metrics.feature.
+	// Panel for tests-with-given-when-then-features/18-performance-metrics.feature.
 	// Fictitious, client-only monthly performance report. All figures below
 	// are scripted demo data representing "May 2025" so the panel reads like
 	// a report an ED manager would generate for the previous month.

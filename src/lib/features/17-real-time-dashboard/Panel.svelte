@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/17-real-time-dashboard.feature.
+	// Panel for tests-with-given-when-then-features/17-real-time-dashboard.feature.
 	// Fictitious, client-only real-time department dashboard. All figures
 	// below are scripted demo data (not live-computed) so the panel reads
 	// like a snapshot a charge nurse would see at 14:30 on a busy Tuesday.

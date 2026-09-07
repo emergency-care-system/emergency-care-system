@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/13-dynamic-queue-updates.feature.
+	// Panel for tests-with-given-when-then-features/13-dynamic-queue-updates.feature.
 	//
 	// Every scenario submits a distinct combination of fields/buttons (an
 	// optional bed type, an optional specialty, a physician-unavailable

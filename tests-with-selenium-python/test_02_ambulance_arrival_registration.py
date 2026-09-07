@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/02-ambulance-arrival-registration.feature
+tests-with-given-when-then-features/02-ambulance-arrival-registration.feature
 (equivalent to tests-with-selenium-javascript/02-ambulance-arrival-registration.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

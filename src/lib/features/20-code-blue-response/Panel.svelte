@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/20-code-blue-response.feature.
+	// Panel for tests-with-given-when-then-features/20-code-blue-response.feature.
 	//
 	// Fictitious, client-only code blue response demo. Pressing the code blue
 	// button reveals the instant activation details for the scripted scenario

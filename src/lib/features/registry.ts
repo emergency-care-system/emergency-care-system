@@ -1,4 +1,4 @@
-// Registry of the 22 ED features, one per spec/features/*.feature file.
+// Registry of the 22 ED features, one per tests-with-given-when-then-features/*.feature file.
 //
 // `slug` (without the leading number) is used for this feature's nav link
 // (data-testid="nav-<slug>") and drives the dynamic import path below.

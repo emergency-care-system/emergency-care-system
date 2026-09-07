@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/07-physician-assessment.feature
+tests-with-given-when-then-features/07-physician-assessment.feature
 (equivalent to tests-with-selenium-javascript/07-physician-assessment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

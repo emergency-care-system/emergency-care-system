@@ -1,5 +1,5 @@
 // Fictitious, client-only sequence counter for the Lab Result Processing
-// demo panel (spec/features/09-lab-result-processing.feature).
+// demo panel (tests-with-given-when-then-features/09-lab-result-processing.feature).
 //
 // Every scenario in that feature drives the exact same UI action (click
 // "Receive Lab Results") with no distinguishing input, but each expects a
@@ -7,7 +7,7 @@
 // browser session, in file order, so we persist a small "how many times has
 // results been received so far" counter in localStorage and use it to cycle
 // through the scenario-appropriate canned results in the same order the
-// scenarios appear in spec/features/09-lab-result-processing.feature.
+// scenarios appear in tests-with-given-when-then-features/09-lab-result-processing.feature.
 
 const STORAGE_KEY = 'ed-demo-lab-result-processing-sequence';
 

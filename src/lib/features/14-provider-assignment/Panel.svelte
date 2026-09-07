@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/14-provider-assignment.feature.
+	// Panel for tests-with-given-when-then-features/14-provider-assignment.feature.
 	//
 	// This feature's scenarios are pure system narration — no form input is
 	// ever entered by the test, only assertions about the assignment the

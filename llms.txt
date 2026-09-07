@@ -19,7 +19,7 @@ which is the canonical source of truth for both files.
 
 ## Specification
 
-- [spec/features/](https://github.com/emergency-care-system/emergency-care-system/tree/main/spec/features): the 22 Gherkin feature files -- the single source of truth for what each feature does.
+- [tests-with-given-when-then-features/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-given-when-then-features): the 22 Gherkin feature files -- the single source of truth for what each feature does.
 - [spec/testing.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md): the six test suites' shared `data-testid` contract, architecture rules, and how to port a change across all six.
 
 ## The app

@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/17-real-time-dashboard.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/17-real-time-dashboard.feature
 (equivalent to tests-with-playwright-javascript/17-real-time-dashboard.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

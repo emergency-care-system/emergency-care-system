@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/04-triage-re-assessment.feature.
+	// Panel for tests-with-given-when-then-features/04-triage-re-assessment.feature.
 	// Fictitious, client-only triage reassessment workflow: recalculates ESI
 	// scores and queue position from updated vital signs. State is kept in
 	// local component state only.

@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha + TypeScript test for
-// spec/features/12-allergy-check.feature
+// tests-with-given-when-then-features/12-allergy-check.feature
 // (equivalent to tests-with-selenium-javascript/12-allergy-check.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

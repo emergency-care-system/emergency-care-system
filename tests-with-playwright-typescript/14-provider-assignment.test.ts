@@ -1,4 +1,4 @@
-// Playwright test for spec/features/14-provider-assignment.feature
+// Playwright test for tests-with-given-when-then-features/14-provider-assignment.feature
 // (equivalent to tests-with-selenium-javascript/14-provider-assignment.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

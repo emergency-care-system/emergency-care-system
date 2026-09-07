@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/10-critical-lab-alert.feature.
+	// Panel for tests-with-given-when-then-features/10-critical-lab-alert.feature.
 	//
 	// This is a fictitious, client-only critical value alert board. Unlike the
 	// Lab Result Processing panel, each scenario here has its own distinct

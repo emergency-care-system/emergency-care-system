@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha test for
-// spec/features/02-ambulance-arrival-registration.feature
+// tests-with-given-when-then-features/02-ambulance-arrival-registration.feature
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin
 // field label (kebab-cased, see support/fields.js) and the shared

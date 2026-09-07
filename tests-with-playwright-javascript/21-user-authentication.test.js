@@ -1,4 +1,4 @@
-// Playwright test for spec/features/21-user-authentication.feature
+// Playwright test for tests-with-given-when-then-features/21-user-authentication.feature
 // (equivalent to tests-with-selenium-javascript/21-user-authentication.test.js).
 //
 // This feature's whole subject is the login/authentication flow itself, so

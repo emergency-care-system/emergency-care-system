@@ -1,4 +1,4 @@
-"""Selenium WebDriver + pytest test for spec/features/16-discharge-follow-up.feature
+"""Selenium WebDriver + pytest test for tests-with-given-when-then-features/16-discharge-follow-up.feature
 (equivalent to tests-with-selenium-javascript/16-discharge-follow-up.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

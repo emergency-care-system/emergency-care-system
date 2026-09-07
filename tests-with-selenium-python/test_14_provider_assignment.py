@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/14-provider-assignment.feature
+tests-with-given-when-then-features/14-provider-assignment.feature
 (equivalent to tests-with-selenium-javascript/14-provider-assignment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

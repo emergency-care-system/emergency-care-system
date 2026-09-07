@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/03-initial-triage-assessment.feature.
+	// Panel for tests-with-given-when-then-features/03-initial-triage-assessment.feature.
 	// Fictitious, client-only ESI (Emergency Severity Index) triage assessment
 	// workflow. State is kept in local component state only.
 	import { Button } from 'lily-design-system-svelte-headless';

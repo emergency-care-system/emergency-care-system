@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha test for
-// spec/features/03-initial-triage-assessment.feature
+// tests-with-given-when-then-features/03-initial-triage-assessment.feature
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin
 // field label (kebab-cased, see support/fields.js) and the shared

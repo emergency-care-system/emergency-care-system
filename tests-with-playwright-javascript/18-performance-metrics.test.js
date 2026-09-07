@@ -1,4 +1,4 @@
-// Playwright test for spec/features/18-performance-metrics.feature
+// Playwright test for tests-with-given-when-then-features/18-performance-metrics.feature
 // (equivalent to tests-with-selenium-javascript/18-performance-metrics.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

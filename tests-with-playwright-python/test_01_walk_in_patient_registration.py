@@ -1,5 +1,5 @@
 """Playwright + pytest test for
-spec/features/01-walk-in-patient-registration.feature
+tests-with-given-when-then-features/01-walk-in-patient-registration.feature
 (equivalent to tests-with-playwright-javascript/01-walk-in-patient-registration.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

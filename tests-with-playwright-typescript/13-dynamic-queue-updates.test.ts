@@ -1,4 +1,4 @@
-// Playwright test for spec/features/13-dynamic-queue-updates.feature
+// Playwright test for tests-with-given-when-then-features/13-dynamic-queue-updates.feature
 // (equivalent to tests-with-selenium-javascript/13-dynamic-queue-updates.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

@@ -1,4 +1,4 @@
-"""Selenium WebDriver + pytest test for spec/features/15-patient-discharge.feature
+"""Selenium WebDriver + pytest test for tests-with-given-when-then-features/15-patient-discharge.feature
 (equivalent to tests-with-selenium-javascript/15-patient-discharge.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/11-medication-administration.feature.
+	// Panel for tests-with-given-when-then-features/11-medication-administration.feature.
 	//
 	// Every scenario in the test file drives the exact same two actions
 	// (scan wristband barcode, then scan medication barcode) with no

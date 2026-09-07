@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/10-critical-lab-alert.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/10-critical-lab-alert.feature
 (equivalent to tests-with-playwright-javascript/10-critical-lab-alert.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

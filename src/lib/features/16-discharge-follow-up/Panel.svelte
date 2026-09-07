@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/16-discharge-follow-up.feature.
+	// Panel for tests-with-given-when-then-features/16-discharge-follow-up.feature.
 	//
 	// Like 14-provider-assignment, this feature's test never fills in any
 	// form fields — every scenario is pure system narration checked purely

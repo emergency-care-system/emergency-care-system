@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/09-lab-result-processing.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/09-lab-result-processing.feature
 (equivalent to tests-with-playwright-javascript/09-lab-result-processing.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

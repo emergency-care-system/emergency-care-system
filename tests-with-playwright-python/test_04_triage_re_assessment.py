@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/04-triage-re-assessment.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/04-triage-re-assessment.feature
 (equivalent to tests-with-playwright-javascript/04-triage-re-assessment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

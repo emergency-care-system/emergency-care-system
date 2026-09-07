@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/19-mass-casualty-activation.feature.
+	// Panel for tests-with-given-when-then-features/19-mass-casualty-activation.feature.
 	// Fictitious, client-only mass casualty incident (MCI) activation panel.
 	// All figures below are scripted demo data for the "multi-vehicle
 	// accident" scenario family described in the feature file.

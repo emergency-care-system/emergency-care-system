@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha test for
-// spec/features/05-bed-assignment.feature
+// tests-with-given-when-then-features/05-bed-assignment.feature
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin
 // field label (kebab-cased, see support/fields.js) and the shared

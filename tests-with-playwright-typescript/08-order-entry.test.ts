@@ -1,4 +1,4 @@
-// Playwright test for spec/features/08-order-entry.feature
+// Playwright test for tests-with-given-when-then-features/08-order-entry.feature
 // (equivalent to tests-with-selenium-javascript/08-order-entry.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

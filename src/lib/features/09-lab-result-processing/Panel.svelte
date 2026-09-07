@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/09-lab-result-processing.feature.
+	// Panel for tests-with-given-when-then-features/09-lab-result-processing.feature.
 	//
 	// This is a fictitious, client-only HL7 result inbox. Every scenario in the
 	// feature file clicks a single "Receive Lab Results" button with no

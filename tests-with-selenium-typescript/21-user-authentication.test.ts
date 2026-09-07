@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha test for
-// spec/features/21-user-authentication.feature
+// tests-with-given-when-then-features/21-user-authentication.feature
 //
 // This feature's whole subject is the login/authentication flow itself, so
 // most scenarios drive the login page directly with the shared data-testid

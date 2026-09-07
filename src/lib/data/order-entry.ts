@@ -1,5 +1,5 @@
 // Fictitious, client-only sequence counters for the Order Entry demo panel
-// (spec/features/08-order-entry.feature).
+// (tests-with-given-when-then-features/08-order-entry.feature).
 //
 // Several scenarios in that feature drive the exact same UI actions (click
 // "Enter Order" a fixed number of times, then "Submit Orders") but each
@@ -8,7 +8,7 @@
 // one browser session, in file order, so we persist a small "how many times
 // has this shape of submission happened so far" counter in localStorage and
 // use it to cycle through the scenario-appropriate canned results in the
-// same order the scenarios appear in spec/features/08-order-entry.feature.
+// same order the scenarios appear in tests-with-given-when-then-features/08-order-entry.feature.
 
 const STORAGE_KEY = 'ed-demo-order-entry-sequence';
 

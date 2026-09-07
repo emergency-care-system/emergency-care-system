@@ -28,8 +28,8 @@
 			"title": "Specification",
 			"links": [
 				{
-					"title": "spec/features/",
-					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/spec/features",
+					"title": "tests-with-given-when-then-features/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-given-when-then-features",
 					"description": "The 22 Gherkin feature files -- the single source of truth for what each feature does."
 				},
 				{

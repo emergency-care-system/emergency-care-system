@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/03-initial-triage-assessment.feature
+tests-with-given-when-then-features/03-initial-triage-assessment.feature
 (equivalent to tests-with-selenium-javascript/03-initial-triage-assessment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

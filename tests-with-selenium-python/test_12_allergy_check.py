@@ -1,4 +1,4 @@
-"""Selenium WebDriver + pytest test for spec/features/12-allergy-check.feature
+"""Selenium WebDriver + pytest test for tests-with-given-when-then-features/12-allergy-check.feature
 (equivalent to tests-with-selenium-javascript/12-allergy-check.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

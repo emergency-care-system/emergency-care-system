@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/16-discharge-follow-up.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/16-discharge-follow-up.feature
 (equivalent to tests-with-playwright-javascript/16-discharge-follow-up.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

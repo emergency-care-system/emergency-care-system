@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/15-patient-discharge.feature.
+	// Panel for tests-with-given-when-then-features/15-patient-discharge.feature.
 	//
 	// Fictitious, scripted discharge workflow. The physician enters discharge
 	// orders (the union of every field any scenario in the feature file

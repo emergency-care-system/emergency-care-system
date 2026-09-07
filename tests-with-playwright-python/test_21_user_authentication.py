@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/21-user-authentication.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/21-user-authentication.feature
 (equivalent to tests-with-playwright-javascript/21-user-authentication.test.js).
 
 This feature's whole subject is the login/authentication flow itself, so

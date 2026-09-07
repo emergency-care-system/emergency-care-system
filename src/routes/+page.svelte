@@ -15,7 +15,7 @@
 			.replace(/(^-|-$)/g, '');
 	}
 
-	// Role-personalized Overview content -- spec/features/21-user-authentication.feature,
+	// Role-personalized Overview content -- tests-with-given-when-then-features/21-user-authentication.feature,
 	// "Role-based dashboard customization after successful login".
 	const physicianDashboard: Row[] = [
 		{ label: 'Patient Queue', value: 'Patients waiting to be seen by priority' },

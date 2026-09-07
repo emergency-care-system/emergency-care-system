@@ -1,6 +1,6 @@
 # Selenium JavaScript
 
-For each file `spec/features/*`, there is a corresponding
+For each file `tests-with-given-when-then-features/*`, there is a corresponding
 `tests-with-selenium-javascript/*` test file — the original suite that
 every other suite (Playwright JS, and the TypeScript and Python ports of
 both) is a mechanical port of.

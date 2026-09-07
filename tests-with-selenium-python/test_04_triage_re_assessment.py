@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/04-triage-re-assessment.feature
+tests-with-given-when-then-features/04-triage-re-assessment.feature
 (equivalent to tests-with-selenium-javascript/04-triage-re-assessment.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

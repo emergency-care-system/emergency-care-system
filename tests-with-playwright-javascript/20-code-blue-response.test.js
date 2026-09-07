@@ -1,4 +1,4 @@
-// Playwright test for spec/features/20-code-blue-response.feature
+// Playwright test for tests-with-given-when-then-features/20-code-blue-response.feature
 // (equivalent to tests-with-selenium-javascript/20-code-blue-response.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

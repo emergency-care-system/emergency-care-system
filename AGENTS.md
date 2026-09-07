@@ -55,7 +55,7 @@ see `spec/index.md`. The two Python suites are the one exception (`pip`).
   expectations that still apply (branch off `main`, clear messages,
   fast-forward merge back). Force-pushes and rewriting shared history
   still call for asking first.
-- **Specification-driven.** `spec/features/*.feature` is the single
+- **Specification-driven.** `tests-with-given-when-then-features/*.feature` is the single
   source of truth for what a feature does. The app panel and all six
   test suites are built to match it, not the other way around — if a
   test and a `.feature` file disagree, the `.feature` file wins and the

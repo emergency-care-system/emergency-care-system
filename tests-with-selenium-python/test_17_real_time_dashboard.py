@@ -1,5 +1,5 @@
 """Selenium WebDriver + pytest test for
-spec/features/17-real-time-dashboard.feature
+tests-with-given-when-then-features/17-real-time-dashboard.feature
 (equivalent to tests-with-selenium-javascript/17-real-time-dashboard.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

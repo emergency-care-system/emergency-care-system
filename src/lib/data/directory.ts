@@ -9,7 +9,7 @@
 //   them like any other directory user, then redirects to the dashboard.
 // - Four narrower accounts (sjohnson, mchen, awilson, pmartinez) that each
 //   exist to demonstrate one specific authentication scenario from
-//   spec/features/21-user-authentication.feature (successful login, wrong
+//   tests-with-given-when-then-features/21-user-authentication.feature (successful login, wrong
 //   password, account lockout, expired password) with the exact scripted
 //   detail that feature describes.
 //

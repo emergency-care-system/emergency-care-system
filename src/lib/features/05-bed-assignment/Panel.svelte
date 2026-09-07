@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/05-bed-assignment.feature.
+	// Panel for tests-with-given-when-then-features/05-bed-assignment.feature.
 	//
 	// Fictitious, client-only bed assignment recommendation engine. Each click
 	// of "Request bed assignment recommendations" advances through a scripted

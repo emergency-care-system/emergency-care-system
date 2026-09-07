@@ -1,4 +1,4 @@
-// Playwright test for spec/features/11-medication-administration.feature
+// Playwright test for tests-with-given-when-then-features/11-medication-administration.feature
 // (equivalent to tests-with-selenium-javascript/11-medication-administration.test.js).
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin

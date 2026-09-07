@@ -1,5 +1,5 @@
 // Selenium WebDriver + Mocha test for
-// spec/features/17-real-time-dashboard.feature
+// tests-with-given-when-then-features/17-real-time-dashboard.feature
 //
 // Assumes the app exposes data-testid attributes matching each Gherkin
 // field label (kebab-cased, see support/fields.js) and the shared

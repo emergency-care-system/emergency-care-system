@@ -1,4 +1,4 @@
-"""Playwright + pytest test for spec/features/20-code-blue-response.feature
+"""Playwright + pytest test for tests-with-given-when-then-features/20-code-blue-response.feature
 (equivalent to tests-with-playwright-javascript/20-code-blue-response.test.js).
 
 Assumes the app exposes data-testid attributes matching each Gherkin field

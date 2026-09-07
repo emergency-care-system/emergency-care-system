@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/06-bed-status-updates.feature.
+	// Panel for tests-with-given-when-then-features/06-bed-status-updates.feature.
 	//
 	// Fictitious, client-only bed status workflow. All actions happen within a
 	// single page load (each Selenium scenario reloads the app fresh via the

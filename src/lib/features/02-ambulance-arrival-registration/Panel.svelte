@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/02-ambulance-arrival-registration.feature.
+	// Panel for tests-with-given-when-then-features/02-ambulance-arrival-registration.feature.
 	// Fictitious, client-only "unknown patient" registration workflow. State is
 	// kept in local component state only (no localStorage) since none of this
 	// feature's scenarios require data to persist across separate test files.

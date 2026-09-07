@@ -1,5 +1,5 @@
 <script lang="ts">
-	// Panel for spec/features/21-user-authentication.feature ("User Authentication").
+	// Panel for tests-with-given-when-then-features/21-user-authentication.feature ("User Authentication").
 	//
 	// This feature's own subject is the login flow itself (see
 	// src/routes/login/+page.svelte and its Selenium test, which drives
