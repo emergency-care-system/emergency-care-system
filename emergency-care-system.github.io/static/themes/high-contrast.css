@@ -1,0 +1,10 @@
+:root[data-theme='high-contrast'] {
+	color-scheme: light;
+	--color-bg: #ffffff;
+	--color-bg-subtle: #ffffff;
+	--color-text: #000000;
+	--color-text-muted: #000000;
+	--color-border: #000000;
+	--color-accent: #b3261e;
+	--color-link: #0000ee;
+}

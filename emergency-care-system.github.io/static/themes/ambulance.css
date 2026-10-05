@@ -1,0 +1,10 @@
+:root[data-theme='ambulance'] {
+	color-scheme: light;
+	--color-bg: #fffdfb;
+	--color-bg-subtle: #fff1ef;
+	--color-text: #2a1210;
+	--color-text-muted: #7a4a45;
+	--color-border: #f2c9c4;
+	--color-accent: #d7291e;
+	--color-link: #a3160d;
+}

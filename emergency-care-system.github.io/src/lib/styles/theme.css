@@ -1,0 +1,408 @@
+/* Shared tokens and class hooks for every route -- routes don't define
+   their own <style> blocks for these, they just use these classes.
+
+   Colour tokens (--color-bg, --color-text, etc.) are NOT defined here --
+   they come from whichever static/themes/<id>.css is currently loaded via
+   the <link data-lily-theme-picker="theme"> in app.html (see
+   SitePickers.svelte and src/lib/data/themes.ts). app.html hardcodes an
+   initial href of /themes/light.css, so light is also the correct default
+   with JavaScript disabled. */
+
+:root {
+	--max-width: 72rem;
+	--space: 1.25rem;
+	/* The text-size picker sets data-text-size on <html>; each selector
+	   below maps a slug (Lily's seven-step scale) to a scale multiplier.
+	   "normal" needs no rule -- the calc() below falls back to 1 when
+	   --user-font-scale is unset. */
+}
+
+:root[data-text-size='smallest'] {
+	--user-font-scale: 0.75;
+}
+
+:root[data-text-size='smaller'] {
+	--user-font-scale: 0.8125;
+}
+
+:root[data-text-size='small'] {
+	--user-font-scale: 0.875;
+}
+
+:root[data-text-size='large'] {
+	--user-font-scale: 1.125;
+}
+
+:root[data-text-size='larger'] {
+	--user-font-scale: 1.25;
+}
+
+:root[data-text-size='largest'] {
+	--user-font-scale: 1.5;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: calc(100% * var(--user-font-scale, 1));
+}
+
+body {
+	margin: 0;
+	background: var(--color-bg);
+	color: var(--color-text);
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+	line-height: 1.55;
+}
+
+a {
+	color: var(--color-link);
+}
+
+.site-shell {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 var(--space);
+}
+
+.site-header,
+.site-footer {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.site-footer {
+	border-top: 1px solid var(--color-border);
+	border-bottom: none;
+	margin-top: 3rem;
+	color: var(--color-text-muted);
+	font-size: 0.9rem;
+}
+
+.site-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.site-nav a {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.site-nav a:hover {
+	text-decoration: underline;
+}
+
+.site-nav-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin-left: auto;
+}
+
+.page-hero {
+	padding: 2.5rem 0 1.5rem;
+}
+
+.page-hero h1 {
+	margin: 0 0 0.5rem;
+	font-size: 2rem;
+}
+
+.page-hero p {
+	color: var(--color-text-muted);
+	max-width: 42rem;
+}
+
+.card {
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	padding: 1rem 1.25rem;
+	background: var(--color-bg-subtle);
+	margin-bottom: 1rem;
+}
+
+.card h2,
+.card h3 {
+	margin-top: 0;
+}
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	gap: 1rem;
+}
+
+.link-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.link-list li {
+	padding: 0.15rem 0;
+}
+
+.badge {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--color-accent);
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	padding: 0.1rem 0.6rem;
+}
+
+.notice {
+	border-left: 3px solid var(--color-accent);
+	background: var(--color-bg-subtle);
+	padding: 0.75rem 1rem;
+	margin: 1.5rem 0;
+}
+
+code,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Menlo,
+		Consolas,
+		monospace;
+}
+
+pre {
+	background: var(--color-bg-subtle);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	overflow-x: auto;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Lily PickerBar (search, theme, locale, text size, share pickers)   */
+/* These are headless: the packages render only the class names below,  */
+/* with no styling of their own, so this site supplies it directly     */
+/* (rather than pulling in Lily's full 492-class-hook theme catalog,    */
+/* which styles a much larger component surface than this site uses).  */
+/* All of them share one shape: a root, an icon button, and a popup   */
+/* of options -- styled once here under a shared selector list.        */
+/* ------------------------------------------------------------------ */
+
+.picker-bar {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+/* The site is English only, but PickerBar always renders a locale
+   picker -- hide it rather than offer a language choice that does
+   nothing. */
+.picker-bar .locale-picker {
+	display: none;
+}
+
+.search-picker,
+.theme-picker,
+.text-size-picker,
+.share-picker {
+	position: relative;
+	display: inline-block;
+}
+
+/* Each picker renders a hover/focus tooltip (the button's name). It must be
+   out of flow: in flow it grows the picker's box on hover and shifts the
+   button out from under the pointer, so a real click misses it. */
+.search-picker-tooltip,
+.theme-picker-tooltip,
+.text-size-picker-tooltip,
+.share-picker-tooltip {
+	position: absolute;
+	top: calc(100% + 0.35rem);
+	right: 0;
+	z-index: 30;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.85rem;
+	white-space: nowrap;
+	pointer-events: none;
+	background: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 0.35rem;
+}
+
+.search-picker-tooltip[hidden],
+.theme-picker-tooltip[hidden],
+.text-size-picker-tooltip[hidden],
+.share-picker-tooltip[hidden] {
+	display: none;
+}
+
+.search-picker-panel {
+	position: absolute;
+	top: calc(100% + 0.35rem);
+	right: 0;
+	z-index: 20;
+	padding: 0.4rem;
+	background: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
+}
+
+.search-picker-panel[hidden] {
+	display: none;
+}
+
+.search-picker-form {
+	display: flex;
+	gap: 0.35rem;
+}
+
+.search-picker-input {
+	min-width: 12rem;
+	padding: 0.35rem 0.5rem;
+	font: inherit;
+	color: var(--color-text);
+	background: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 0.35rem;
+}
+
+.search-picker-submit {
+	padding: 0.35rem 0.6rem;
+	font: inherit;
+	color: var(--color-text);
+	background: transparent;
+	border: 1px solid var(--color-border);
+	border-radius: 0.35rem;
+	cursor: pointer;
+}
+
+.search-picker-button,
+.theme-picker-button,
+.text-size-picker-button,
+.share-picker-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	padding: 0;
+	font: inherit;
+	font-weight: 700;
+	color: var(--color-text);
+	background: transparent;
+	border: 1px solid var(--color-border);
+	border-radius: 0.4rem;
+	cursor: pointer;
+}
+
+.search-picker-button:hover,
+.theme-picker-button:hover,
+.text-size-picker-button:hover,
+.share-picker-button:hover {
+	background: var(--color-bg-subtle);
+}
+
+.search-picker-button[aria-expanded='true'],
+.theme-picker-button[aria-expanded='true'],
+.text-size-picker-button[aria-expanded='true'],
+.share-picker-button[aria-expanded='true'] {
+	border-color: var(--color-accent);
+}
+
+.theme-picker-list,
+.text-size-picker-list,
+.share-picker-list {
+	position: absolute;
+	top: calc(100% + 0.35rem);
+	right: 0;
+	z-index: 20;
+	min-width: 11rem;
+	max-height: 20rem;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0.3rem;
+	list-style: none;
+	background: var(--color-bg);
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	box-shadow: 0 8px 24px rgb(0 0 0 / 0.15);
+}
+
+.theme-picker-list[hidden],
+.text-size-picker-list[hidden],
+.share-picker-list[hidden] {
+	display: none;
+}
+
+.theme-picker-option,
+.text-size-picker-option {
+	padding: 0.4rem 0.6rem;
+	border-radius: 0.35rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.theme-picker-option:hover,
+.text-size-picker-option:hover,
+.share-picker-list-item:hover {
+	background: var(--color-bg-subtle);
+}
+
+.theme-picker-option[data-active],
+.text-size-picker-option[data-active] {
+	background: var(--color-bg-subtle);
+}
+
+.theme-picker-option[aria-selected='true'],
+.text-size-picker-option[aria-selected='true'] {
+	font-weight: 700;
+	color: var(--color-accent);
+}
+
+.share-picker-list-item {
+	border-radius: 0.35rem;
+}
+
+.share-picker-target,
+.share-picker-copy {
+	display: block;
+	width: 100%;
+	padding: 0.4rem 0.6rem;
+	font: inherit;
+	color: var(--color-text);
+	text-decoration: none;
+	text-align: left;
+	background: transparent;
+	border: 0;
+	border-radius: 0.35rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.share-picker-status {
+	margin: 0;
+}

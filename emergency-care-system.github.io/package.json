@@ -1,0 +1,33 @@
+{
+	"name": "emergency-care-system.github.io",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"description": "GitHub Pages site for the Emergency Care System demo: an overview of its 22 Gherkin features and twelve parallel test suites, and a link to the source.",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-static": "^4.0.0",
+		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"svelte": "^5.57.1",
+		"svelte-check": "^4.7.6",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16"
+	},
+	"dependencies": {
+		"@lilydesignsystem/svelte-headless": "^0.3.0",
+		"@lilydesignsystem/svelte-picker-bar": "^0.2.0",
+		"@lilydesignsystem/svelte-share-picker": "^0.2.0"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	}
+}

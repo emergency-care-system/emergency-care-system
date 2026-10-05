@@ -94,9 +94,13 @@ C#/Java/Rust suites (`dotnet`, `mvn`, `cargo`).
   independently maintained packages/skills. This repo's `AGENTS.md` and
   `spec/*.md` are the source of truth when they disagree with a vendored
   skill's own docs (each skill's `SKILL.md` says so).
-- There's a companion GitHub Pages site,
+- The companion GitHub Pages site lives in this repo's
+  `emergency-care-system.github.io/` directory (SvelteKit 3, npm — not
+  pnpm — Lily's `@lilydesignsystem/*` packages) and is deployed to
   [`emergency-care-system.github.io`](https://github.com/emergency-care-system/emergency-care-system.github.io)
-  (separate repository, not yet deployed), that documents this repo's
-  features and test suites for a general audience. It has its own
-  `AGENTS.md` and `spec/site-architecture.md` — don't duplicate its
-  content here or vice versa; link instead.
+  with `git subtree push` (see that directory's `README.md`). It
+  documents this repo's features and test suites for a general audience
+  and has its own `AGENTS.md` and `spec/site-architecture.md` — don't
+  duplicate its content here or vice versa; link instead. When a feature
+  or test suite is added, renamed, or removed here, update the site in
+  the same change.

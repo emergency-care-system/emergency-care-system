@@ -111,5 +111,7 @@ the tests across all twelve suites in one sequence.
 
 - [`emergency-care-system.github.io`](https://github.com/emergency-care-system/emergency-care-system.github.io) —
   a small companion SvelteKit site documenting this repo's 22 features
-  and twelve test suites (not yet deployed; its own `AGENTS.md` and
-  `spec/site-architecture.md` are the source of truth for it).
+  and twelve test suites. Its source is the `emergency-care-system.github.io/`
+  directory of this repo, deployed to that repository with `git subtree
+  push`; its own `AGENTS.md` and `spec/site-architecture.md` are the
+  source of truth for it.

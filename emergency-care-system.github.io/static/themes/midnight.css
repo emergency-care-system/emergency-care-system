@@ -1,0 +1,10 @@
+:root[data-theme='midnight'] {
+	color-scheme: dark;
+	--color-bg: #0a1420;
+	--color-bg-subtle: #101d2e;
+	--color-text: #dbe7f2;
+	--color-text-muted: #7c93a8;
+	--color-border: #1e3349;
+	--color-accent: #4dd0c9;
+	--color-link: #4dd0c9;
+}

@@ -1,0 +1,43 @@
+{
+	"$comment": "There is no ratified JSON counterpart to llms.txt (https://llmstxt.org) -- this file is a structured, non-standard mirror of llms.txt for tools that prefer JSON over Markdown. llms.txt is the canonical version; keep this in sync with it and with spec/site-architecture.md in this site's source repository.",
+	"name": "Emergency Care System",
+	"url": "https://emergency-care-system.github.io/",
+	"summary": "A public, free, open-source demonstration of how to plan an emergency care system, from higher-level use cases to lower-level test automation. All data is synthetic; this is not a real emergency care system.",
+	"sections": [
+		{
+			"title": "Pages",
+			"links": [
+				{
+					"title": "Home",
+					"url": "https://emergency-care-system.github.io/",
+					"description": "Overview of the demo, its 22 features, and its twelve test suites."
+				},
+				{
+					"title": "Features",
+					"url": "https://emergency-care-system.github.io/features/",
+					"description": "All 22 Gherkin features, each with its user story and a link to the .feature file."
+				},
+				{
+					"title": "Testing",
+					"url": "https://emergency-care-system.github.io/testing/",
+					"description": "How the same 171 scenarios are ported across Selenium/Playwright x JavaScript/TypeScript/Python/C#/Java/Rust."
+				},
+				{
+					"title": "About",
+					"url": "https://emergency-care-system.github.io/about/",
+					"description": "What this demo is, what it isn't, and how the source repository is organized."
+				}
+			]
+		},
+		{
+			"title": "Source repository",
+			"links": [
+				{
+					"title": "emergency-care-system/emergency-care-system",
+					"url": "https://github.com/emergency-care-system/emergency-care-system",
+					"description": "The app (src/), the specs (spec/), the Claude Code skills (skills/), and all twelve test suites."
+				}
+			]
+		}
+	]
+}

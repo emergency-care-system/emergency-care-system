@@ -1,0 +1,10 @@
+:where(:root, :root[data-theme='light']) {
+	color-scheme: light;
+	--color-bg: #ffffff;
+	--color-bg-subtle: #f6f7f9;
+	--color-text: #1a1d21;
+	--color-text-muted: #5b6470;
+	--color-border: #dde1e6;
+	--color-accent: #b3261e;
+	--color-link: #1a5fb4;
+}
