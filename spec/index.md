@@ -56,13 +56,13 @@ hard to reverse in a way a plain commit-and-push is not.
 - `tests-with-given-when-then-features/*.feature` — the 22 Gherkin feature files. This is
   where a new feature starts; nothing else in the repo should be treated
   as more authoritative about what a feature is supposed to do.
-- `spec/testing.md` — the six test suites' shared contract and
+- `spec/testing.md` — the twelve test suites' shared contract and
   architecture rules (read this before touching any `tests-with-*/`
   directory).
 - `src/lib/features/NN-slug/Panel.svelte` — one component per feature,
   registered in `src/lib/features/registry.ts`. Every interactive
   element and assertable text value carries a `data-testid` matching its
-  Gherkin field label, kebab-cased — this is the contract all six test
+  Gherkin field label, kebab-cased — this is the contract all twelve test
   suites depend on (see `testing.md`).
 - `src/lib/data/` — fictitious seed data (`directory.ts` for the login
   identities, `patients.ts`, `order-entry.ts`,
@@ -74,8 +74,8 @@ hard to reverse in a way a plain commit-and-push is not.
   Svelte 5 runes.
 - `src/routes/` — `+layout.svelte` (nav shell), `+page.svelte`
   (dashboard), `login/+page.svelte`.
-- `tests-with-{selenium,playwright}-{javascript,typescript,python}/` —
-  the six test suites; see `testing.md`.
+- `tests-with-{selenium,playwright}-{javascript,typescript,python,c-sharp,java,rust}/` —
+  the twelve test suites; see `testing.md`.
 - `skills/` — Claude Code skills used while building this repo
   (`selenium-javascript-skill/`, and two Lily Design System skills,
   vendored from their own upstream repositories — see
@@ -105,11 +105,11 @@ with real wrong-password and 3-strikes lockout behavior underneath — see
 
 See ["Adding a new feature"](testing.md#adding-a-new-feature) in
 `testing.md` — it covers the feature file, the app panel, and porting
-the tests across all six suites in one sequence.
+the tests across all twelve suites in one sequence.
 
 ## Related
 
 - [`emergency-care-system.github.io`](https://github.com/emergency-care-system/emergency-care-system.github.io) —
   a small companion SvelteKit site documenting this repo's 22 features
-  and six test suites (not yet deployed; its own `AGENTS.md` and
+  and twelve test suites (not yet deployed; its own `AGENTS.md` and
   `spec/site-architecture.md` are the source of truth for it).

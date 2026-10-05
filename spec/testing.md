@@ -1,15 +1,15 @@
 # Testing
 
-The single source of truth for how the six test suites in this repo are
+The single source of truth for how the twelve test suites in this repo are
 built and how to extend them consistently. `AGENTS.md`, `README.md`, and
 any suite's own file-header comments should point here rather than
 restate these facts — update this file, not copies of it.
 
-## The six suites
+## The twelve suites
 
 Every one of the 171 scenarios across all 22 `tests-with-given-when-then-features/*.feature`
 files is implemented once per suite, pairing two automation libraries
-with three languages:
+with six languages:
 
 | Directory | Library | Language | Runner |
 |---|---|---|---|
@@ -19,16 +19,22 @@ with three languages:
 | `tests-with-playwright-typescript/` | Playwright | TypeScript | Playwright Test |
 | `tests-with-selenium-python/` | Selenium WebDriver | Python | pytest |
 | `tests-with-playwright-python/` | Playwright | Python | pytest |
+| `tests-with-selenium-c-sharp/` | Selenium WebDriver | C# | NUnit (`dotnet test`) |
+| `tests-with-playwright-c-sharp/` | Playwright | C# | NUnit (`dotnet test`) |
+| `tests-with-selenium-java/` | Selenium WebDriver | Java | JUnit 5 (Maven) |
+| `tests-with-playwright-java/` | Playwright | Java | JUnit 5 (Maven) |
+| `tests-with-selenium-rust/` | Selenium WebDriver (`thirtyfour`) | Rust | libtest-mimic (`cargo test`) |
+| `tests-with-playwright-rust/` | Playwright (`playwright-rs`) | Rust | libtest-mimic (`cargo test`) |
 
 `tests-with-selenium-javascript/` is the original suite — every other
 suite is a mechanical port of it (same scenarios, same assertions, same
 `describe`/`it` or `test`/`test.beforeEach` structure translated to the
 target language's idiom). When adding or fixing a scenario, change the
-JavaScript suite first, then port the same change to the other five.
+JavaScript suite first, then port the same change to the other eleven.
 
 ## The shared contract
 
-All six suites drive the same running SvelteKit app (`src/`) through one
+All twelve suites drive the same running SvelteKit app (`src/`) through one
 contract, so none of them need to know anything about the app's internal
 implementation:
 
@@ -60,7 +66,9 @@ implementation:
   SvelteKit's hydration and land a stray native form submission before
   the click handler attached). Each file launches its own browser in
   `before`/`beforeAll`/`setup_class` and closes it in
-  `after`/`afterAll`/`teardown_class`.
+  `after`/`afterAll`/`teardown_class` (NUnit `OneTimeSetUp`/`OneTimeTearDown`,
+  JUnit `@BeforeAll`/`@AfterAll`; the Rust suites run each file as its own
+  test binary that starts and quits one browser).
 - **Serial execution within a file, one worker across files.** Later
   scenarios in many features depend on earlier scenarios' side effects
   (`localStorage`/`sessionStorage` — patient duplicate detection,
@@ -94,9 +102,17 @@ pip install -r requirements.txt     # once, for the two Python suites
 playwright install chromium
 pnpm run test:selenium-python       # pytest + Selenium
 pnpm run test:playwright-python     # pytest + Playwright
+
+dotnet test tests-with-selenium-c-sharp     # or: pnpm run test:selenium-c-sharp
+dotnet test tests-with-playwright-c-sharp   # or: pnpm run test:playwright-c-sharp
+mvn -f tests-with-selenium-java/pom.xml test    # or: pnpm run test:selenium-java
+mvn -f tests-with-playwright-java/pom.xml test  # or: pnpm run test:playwright-java
+cargo test --manifest-path tests-with-selenium-rust/Cargo.toml    # or: pnpm run test:selenium-rust
+cargo test --manifest-path tests-with-playwright-rust/Cargo.toml  # or: pnpm run test:playwright-rust
 ```
 
-The JS/TS Selenium suites and both Python suites need a dev server
+The JS/TS Selenium suites, both Python suites, and all six C#/Java/Rust
+suites need a dev server
 already running (`pnpm run dev`, or `BASE_URL` pointed at one); the JS/TS
 Playwright suites start their own dev server automatically if `BASE_URL`
 isn't set (see `playwright.config.js` / `playwright.typescript.config.ts`).
@@ -121,12 +137,50 @@ pattern the four JS/TS npm scripts already use.
    value in the feature file.
 3. Write `tests-with-selenium-javascript/NN-slug.test.js` against it —
    this is the reference implementation every other suite ports.
-4. Port the same file, scenario-for-scenario, to the other five suites,
+4. Port the same file, scenario-for-scenario, to the other eleven suites,
    translating helper calls and assertions to each language's idiom
    (see the shared contract and architecture rules above) but changing
    nothing about which scenarios exist or what they assert.
-5. Run all six suites and confirm the new scenarios pass in every one
+5. Run all twelve suites and confirm the new scenarios pass in every one
    before considering the feature done.
+
+## C#, Java and Rust suites
+
+The six newer suites keep the same shape as the Python ones, with these
+runtime-specific details:
+
+- **Test ordering and one browser per file.** C# uses NUnit
+  (`[OneTimeSetUp]`, `[Test, Order(n)]`, `[NonParallelizable]`), Java uses
+  JUnit 5 (`@BeforeAll`, `@TestMethodOrder(OrderAnnotation)`), and Surefire
+  runs classes serially. Rust's default test harness runs a file's tests in
+  parallel and alphabetically, so each `tests/tNN_*.rs` file sets
+  `harness = false` and calls `run_feature` from
+  `tests/support/runner.rs` (built on `libtest-mimic`), which starts one
+  browser, runs the scenarios in source order on one thread, and still
+  reports each scenario by name.
+- **Playwright acts on the first match.** Playwright locators are strict:
+  an action on a `data-testid` that matches several elements (e.g. one
+  `placeholder-id` per queued patient) is an error, where Selenium's
+  `findElement` silently takes the first. The Playwright C#/Java/Rust
+  helpers therefore use `.First`/`.first()` for every single-element
+  operation (`getText`, `fillField`, `waitForTestId`, `findElement`), and
+  only count (`CountAsync`/`count()`) over the unrestricted locator.
+- **Browser drivers.** Selenium C# and Java use Selenium Manager (bundled
+  in the package), like the JS and Python suites. `thirtyfour` (Rust) has
+  none, so `tests-with-selenium-rust/tests/support/driver.rs` starts
+  chromedriver itself, found via `CHROMEDRIVER`, then `SELENIUM_MANAGER`,
+  then `PATH`. A stale chromedriver earlier on `PATH` than Chrome's version
+  (`session not created: This version of ChromeDriver only supports Chrome
+  version N`) is an environment problem, not a test failure — set
+  `CHROMEDRIVER` to a matching binary.
+- **Playwright browsers.** C# and Java suites use Playwright 1.63 (same as
+  `@playwright/test`), so a `pnpm exec playwright install chromium` browser
+  is reused; otherwise use each package's own installer (see the suite's
+  `README.md`). The Rust suite installs through
+  `cargo run --example install-browsers`. `playwright-rs` is a pre-1.0
+  community crate (there is no official Playwright binding for Rust).
+- **Headed vs. headless.** Selenium suites open a visible Chrome unless
+  `HEADLESS=1`; Playwright suites are headless unless `HEADLESS=0`.
 
 ## Known limitations
 

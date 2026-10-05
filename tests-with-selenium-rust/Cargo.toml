@@ -1,0 +1,102 @@
+[package]
+name = "tests-with-selenium-rust"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Selenium WebDriver (thirtyfour) tests for the emergency care system demo app"
+autotests = false
+
+[dev-dependencies]
+libtest-mimic = "0.8"
+regex = "1"
+serde_json = "1"
+thirtyfour = "0.37"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "process", "net"] }
+
+[[test]]
+name = "t01_walk_in_patient_registration"
+harness = false
+
+[[test]]
+name = "t02_ambulance_arrival_registration"
+harness = false
+
+[[test]]
+name = "t03_initial_triage_assessment"
+harness = false
+
+[[test]]
+name = "t04_triage_re_assessment"
+harness = false
+
+[[test]]
+name = "t05_bed_assignment"
+harness = false
+
+[[test]]
+name = "t06_bed_status_updates"
+harness = false
+
+[[test]]
+name = "t07_physician_assessment"
+harness = false
+
+[[test]]
+name = "t08_order_entry"
+harness = false
+
+[[test]]
+name = "t09_lab_result_processing"
+harness = false
+
+[[test]]
+name = "t10_critical_lab_alert"
+harness = false
+
+[[test]]
+name = "t11_medication_administration"
+harness = false
+
+[[test]]
+name = "t12_allergy_check"
+harness = false
+
+[[test]]
+name = "t13_dynamic_queue_updates"
+harness = false
+
+[[test]]
+name = "t14_provider_assignment"
+harness = false
+
+[[test]]
+name = "t15_patient_discharge"
+harness = false
+
+[[test]]
+name = "t16_discharge_follow_up"
+harness = false
+
+[[test]]
+name = "t17_real_time_dashboard"
+harness = false
+
+[[test]]
+name = "t18_performance_metrics"
+harness = false
+
+[[test]]
+name = "t19_mass_casualty_activation"
+harness = false
+
+[[test]]
+name = "t20_code_blue_response"
+harness = false
+
+[[test]]
+name = "t21_user_authentication"
+harness = false
+
+[[test]]
+name = "t22_audit_trail"
+harness = false

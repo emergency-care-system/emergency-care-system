@@ -20,7 +20,7 @@ which is the canonical source of truth for both files.
 ## Specification
 
 - [tests-with-given-when-then-features/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-given-when-then-features): the 22 Gherkin feature files -- the single source of truth for what each feature does.
-- [spec/testing.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md): the six test suites' shared `data-testid` contract, architecture rules, and how to port a change across all six.
+- [spec/testing.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md): the twelve test suites' shared `data-testid` contract, architecture rules, and how to port a change across all twelve.
 
 ## The app
 
@@ -35,6 +35,12 @@ which is the canonical source of truth for both files.
 - [tests-with-playwright-typescript/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-typescript): Playwright, in TypeScript.
 - [tests-with-selenium-python/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-python): Selenium WebDriver + pytest, in Python.
 - [tests-with-playwright-python/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-python): Playwright + pytest, in Python.
+- [tests-with-selenium-c-sharp/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-c-sharp): Selenium WebDriver + NUnit, in C#.
+- [tests-with-playwright-c-sharp/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-c-sharp): Playwright + NUnit, in C#.
+- [tests-with-selenium-java/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-java): Selenium WebDriver + JUnit 5, in Java.
+- [tests-with-playwright-java/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-java): Playwright + JUnit 5, in Java.
+- [tests-with-selenium-rust/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-rust): Selenium WebDriver (thirtyfour) + libtest-mimic, in Rust.
+- [tests-with-playwright-rust/](https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-rust): Playwright (playwright-rs) + libtest-mimic, in Rust.
 
 ## Skills
 

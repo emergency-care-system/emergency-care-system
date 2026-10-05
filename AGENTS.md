@@ -16,9 +16,9 @@ package manager, authentication, the pattern for adding a new feature —
 read [`spec/index.md`](spec/index.md) first. It's kept current; this
 file won't repeat it.
 
-For the six test suites specifically — their shared `data-testid`
+For the twelve test suites specifically — their shared `data-testid`
 contract, the one-browser-per-file architecture, and how to port a
-change across all six — read [`spec/testing.md`](spec/testing.md).
+change across all twelve — read [`spec/testing.md`](spec/testing.md).
 
 If you change how the repo works in a way future agents need to know,
 update the relevant `spec/*.md` file in the same change — don't leave it
@@ -41,10 +41,20 @@ pip install -r requirements.txt     # once, for the two Python suites
 playwright install chromium
 pnpm run test:selenium-python       # pytest + Selenium
 pnpm run test:playwright-python     # pytest + Playwright
+
+# C#, Java and Rust suites need dotnet, a JDK + Maven, and cargo respectively
+# (and a dev server already running); see spec/testing.md.
+pnpm run test:selenium-c-sharp      # NUnit + Selenium
+pnpm run test:playwright-c-sharp    # NUnit + Playwright
+pnpm run test:selenium-java         # JUnit 5 + Selenium (Maven)
+pnpm run test:playwright-java       # JUnit 5 + Playwright (Maven)
+pnpm run test:selenium-rust         # thirtyfour (cargo test)
+pnpm run test:playwright-rust       # playwright-rs (cargo test)
 ```
 
 Use **pnpm**, not npm or yarn, for every install/run/build command —
-see `spec/index.md`. The two Python suites are the one exception (`pip`).
+see `spec/index.md`. The exceptions are the two Python suites (`pip`) and the
+C#/Java/Rust suites (`dotnet`, `mvn`, `cargo`).
 
 ## Working conventions
 
@@ -72,11 +82,11 @@ see `spec/index.md`. The two Python suites are the one exception (`pip`).
   identities.
 - **The `data-testid` contract is load-bearing.** Renaming, removing, or
   changing the semantics of a `data-testid` in `src/lib/features/**`
-  breaks all six test suites at once. If a feature's UI changes, update
+  breaks all twelve test suites at once. If a feature's UI changes, update
   the test suites in the same change — see `spec/testing.md`.
 - **Six suites, one change.** A behavior change to a feature (in the
   `.feature` file, the app panel, or a scenario's expected text) needs
-  the corresponding scenario updated in all six `tests-with-*/`
+  the corresponding scenario updated in all twelve `tests-with-*/`
   directories, not just one. `tests-with-selenium-javascript/` is the
   reference; port from there.
 - Don't edit vendored content under `skills/lily-design-system-*-skill/`

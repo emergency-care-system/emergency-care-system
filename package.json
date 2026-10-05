@@ -18,7 +18,13 @@
     "test:playwright": "playwright test",
     "test:playwright-typescript": "playwright test --config=playwright.typescript.config.ts",
     "test:selenium-python": "pytest tests-with-selenium-python",
-    "test:playwright-python": "pytest tests-with-playwright-python"
+    "test:playwright-python": "pytest tests-with-playwright-python",
+    "test:selenium-c-sharp": "dotnet test tests-with-selenium-c-sharp",
+    "test:playwright-c-sharp": "dotnet test tests-with-playwright-c-sharp",
+    "test:selenium-java": "mvn -f tests-with-selenium-java/pom.xml test",
+    "test:playwright-java": "mvn -f tests-with-playwright-java/pom.xml test",
+    "test:selenium-rust": "cargo test --manifest-path tests-with-selenium-rust/Cargo.toml",
+    "test:playwright-rust": "cargo test --manifest-path tests-with-playwright-rust/Cargo.toml"
   },
   "dependencies": {
     "lily-design-system-svelte-headless": "^0.3.1",

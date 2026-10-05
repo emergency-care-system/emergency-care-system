@@ -11,14 +11,14 @@ Working on this repo (human or AI agent)? Start with
 [`AGENTS.md`](AGENTS.md) and [`spec/index.md`](spec/index.md) — this
 README covers what the project is; those cover how it's built and how to
 extend it consistently. [`spec/testing.md`](spec/testing.md) is the
-source of truth for the six test suites specifically.
+source of truth for the twelve test suites specifically.
 
 ## Demo app
 
 `tests-with-given-when-then-features/*.feature` (22 Gherkin feature files) drove seven things built
-in this repo — the same 171 scenarios, ported one-to-one across six test
-suites that pair three automation libraries with three languages, plus the
-app itself:
+in this repo — the same 171 scenarios, ported one-to-one across twelve test
+suites that pair two automation libraries (Selenium, Playwright) with six
+languages, plus the app itself:
 
 - `tests-with-selenium-javascript/` — Selenium WebDriver + Mocha, in
   JavaScript. The original suite; every other suite is a mechanical port of
@@ -45,6 +45,13 @@ app itself:
 - `tests-with-playwright-python/` — the Playwright suite in Python, also
   under `pytest`, using Playwright's synchronous API (`sync_playwright`,
   `Page`, `Locator`) and `page.get_by_test_id(...)`.
+- `tests-with-selenium-c-sharp/` and `tests-with-playwright-c-sharp/` — the
+  Selenium and Playwright suites in C#, run by NUnit through `dotnet test`.
+- `tests-with-selenium-java/` and `tests-with-playwright-java/` — the
+  Selenium and Playwright suites in Java, run by JUnit 5 through Maven.
+- `tests-with-selenium-rust/` and `tests-with-playwright-rust/` — the
+  Selenium (`thirtyfour`) and Playwright (`playwright-rs`, a community
+  crate) suites in Rust, run through `cargo test`.
 - `src/` — a real, running SvelteKit 5 app implementing those 22 features as
   a single-page dashboard, styled with
   [Lily Design System](https://www.npmjs.com/package/lily-design-system-svelte-headless)
@@ -69,6 +76,14 @@ pip install -r requirements.txt
 playwright install chromium
 BASE_URL=http://localhost:5173 pnpm run test:selenium-python    # pytest + Selenium, against a running dev server
 BASE_URL=http://localhost:5173 pnpm run test:playwright-python  # pytest + Playwright, against a running dev server
+
+# C#, Java and Rust suites need dotnet, a JDK + Maven, and cargo; each suite's README.md has its setup.
+pnpm run test:selenium-c-sharp      # NUnit + Selenium, against a running dev server
+pnpm run test:playwright-c-sharp    # NUnit + Playwright
+pnpm run test:selenium-java         # JUnit 5 + Selenium (Maven)
+pnpm run test:playwright-java       # JUnit 5 + Playwright (Maven)
+pnpm run test:selenium-rust         # thirtyfour (cargo test)
+pnpm run test:playwright-rust       # playwright-rs (cargo test)
 ```
 
 Sign in with `doctor@example.com`, `nurse@example.com`, or
@@ -84,7 +99,7 @@ Selenium tests' own precondition checks, goes through this same explicit
 sign-in screen.
 
 After login, pick a feature from the sidebar nav — only one feature's panel
-is mounted at a time. All six test suites do the same: each test's
+is mounted at a time. All twelve test suites do the same: each test's
 `beforeEach` logs in, then clicks that feature's `data-testid="nav-<slug>"`
 link before interacting with the panel. Each test file in every suite
 launches its own dedicated browser for its scenarios (`test.beforeAll`/
@@ -99,7 +114,7 @@ single worker rather than run in parallel.
 independently (one file per feature, in parallel), so a handful of scenarios
 assert exact wording that was invented by that generation process rather than
 drawn from the `.feature` file's own quoted text. As of the last full run,
-all 171 scenarios pass against the live app in all six suites.
+all 171 scenarios pass against the live app in all twelve suites.
 
 ## Business use cases
 

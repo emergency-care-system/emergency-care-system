@@ -35,7 +35,7 @@
 				{
 					"title": "spec/testing.md",
 					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/testing.md",
-					"description": "The six test suites' shared data-testid contract, architecture rules, and how to port a change across all six."
+					"description": "The twelve test suites' shared data-testid contract, architecture rules, and how to port a change across all twelve."
 				}
 			]
 		},
@@ -86,6 +86,36 @@
 					"title": "tests-with-playwright-python/",
 					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-python",
 					"description": "Playwright + pytest, in Python."
+				},
+				{
+					"title": "tests-with-selenium-c-sharp/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-c-sharp",
+					"description": "Selenium WebDriver + NUnit, in C#."
+				},
+				{
+					"title": "tests-with-playwright-c-sharp/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-c-sharp",
+					"description": "Playwright + NUnit, in C#."
+				},
+				{
+					"title": "tests-with-selenium-java/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-java",
+					"description": "Selenium WebDriver + JUnit 5, in Java."
+				},
+				{
+					"title": "tests-with-playwright-java/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-java",
+					"description": "Playwright + JUnit 5, in Java."
+				},
+				{
+					"title": "tests-with-selenium-rust/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-selenium-rust",
+					"description": "Selenium WebDriver (thirtyfour) + libtest-mimic, in Rust."
+				},
+				{
+					"title": "tests-with-playwright-rust/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/tests-with-playwright-rust",
+					"description": "Playwright (playwright-rs) + libtest-mimic, in Rust."
 				}
 			]
 		},
