@@ -1,5 +1,5 @@
 // Shared site constants -- kept in one place so Seo.svelte, llms.txt/llms.json,
-// and sitemap.xml/+server.ts never drift from each other.
+// and sitemap.xml/+server.ts (generated from the route tree) never drift from each other.
 export const SITE_URL = 'https://emergency-care-system.github.io';
 export const SITE_NAME = 'Emergency Care System';
 export const REPO_URL = 'https://github.com/emergency-care-system/emergency-care-system';

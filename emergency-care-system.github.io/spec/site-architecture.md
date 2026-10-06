@@ -58,7 +58,8 @@ not copies of it.
 ## Directory map
 
 - `src/routes/` — one folder per route (`+page.svelte`, plus
-  `sitemap.xml/+server.ts` for the XML sitemap).
+  `sitemap.xml/+server.ts`, which generates the XML sitemap from the route
+  tree at build time).
 - `src/lib/components/site/` — `Seo.svelte`, `SiteNav.svelte`,
   `FooterNav.svelte`, and `SitePickers.svelte` (the configured
   PickerBar) rendered in `SiteNav.svelte`.
@@ -85,8 +86,10 @@ not copies of it.
    `<p>` tags.
 3. Content as `<div class="card">` / `<div class="card-grid">` blocks —
    no bespoke CSS needed, it's all in `theme.css`.
-4. **Register the route** in `src/routes/sitemap.xml/+server.ts`'s
-   `routes` array.
+4. **Sitemap**: nothing to do — `sitemap.xml/+server.ts` lists every
+   `src/routes/**/+page.svelte` automatically. To keep a page out of it,
+   add its path to `UNLISTED` there; dynamic `[param]` routes are
+   skipped, so list their concrete paths in `EXTRA_ROUTES`.
 5. **Decide navigation visibility** — add it to `SiteNav.svelte` and/or
    `FooterNav.svelte` if it should be discoverable from every page.
 6. Update `static/llms.txt` and `static/llms.json` together — they're
