@@ -27,26 +27,30 @@
     "test:playwright-rust": "cargo test --manifest-path tests-with-playwright-rust/Cargo.toml"
   },
   "dependencies": {
-    "lily-design-system-svelte-headless": "^0.3.1",
     "@svar-ui/svelte-core": "^2.6.1",
-    "@svar-ui/svelte-grid": "^2.7.3"
+    "@svar-ui/svelte-grid": "^2.7.3",
+    "lily-design-system-svelte-headless": "^0.3.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^7.0.1",
-    "@sveltejs/kit": "^2.63.0",
+    "@playwright/test": "^1.63.0",
+    "@sveltejs/adapter-auto": "^8.0.0-next.0",
+    "@sveltejs/kit": "^3.0.0-next.0",
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "@tailwindcss/vite": "^4.3.0",
-    "@playwright/test": "^1.63.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "^26.4.1",
     "@types/selenium-webdriver": "^4.35.6",
     "mocha": "^10.7.3",
     "selenium-webdriver": "^4.25.0",
-    "svelte": "^5.56.1",
-    "svelte-check": "^4.6.0",
+    "svelte": "^5.56.4",
+    "svelte-check": "^4.7.5",
     "tailwindcss": "^4.3.0",
     "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "vite": "^8.0.16"
+  },
+  "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*"
   }
 }

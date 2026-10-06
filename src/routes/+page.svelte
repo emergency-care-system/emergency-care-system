@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import type { Component } from 'svelte';
-	import { sessionState, restoreSession } from '$lib/stores/session.svelte';
-	import { features } from '$lib/features/registry';
+	import { sessionState, restoreSession } from '#lib/stores/session.svelte.js';
+	import { features } from '#lib/features/registry.js';
 
 	type Row = { label: string; value: string };
 

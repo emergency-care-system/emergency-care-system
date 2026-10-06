@@ -20,8 +20,8 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { Button } from 'lily-design-system-svelte-headless';
-	import { login } from '$lib/stores/session.svelte';
-	import { findUser } from '$lib/data/directory';
+	import { login } from '#lib/stores/session.svelte.js';
+	import { findUser } from '#lib/data/directory.js';
 
 	type Row = { label: string; value: string };
 

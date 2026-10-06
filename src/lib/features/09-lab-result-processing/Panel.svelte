@@ -7,7 +7,7 @@
 	// from $lib/data/lab-result-processing picks which canned scenario outcome
 	// to render, in the same order the scenarios appear in the feature file.
 	import { Button } from 'lily-design-system-svelte-headless';
-	import { nextLabResultOccurrence } from '$lib/data/lab-result-processing';
+	import { nextLabResultOccurrence } from '#lib/data/lab-result-processing.js';
 
 	type OutcomeKind =
 		| 'normal'

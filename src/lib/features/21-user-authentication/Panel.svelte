@@ -7,8 +7,8 @@
 	// "Security & Access" summary shown once a session already exists: it
 	// reports who is currently signed in and gives a short, honest
 	// description of this demo's mock authentication model.
-	import { sessionState } from '$lib/stores/session.svelte';
-	import { userDirectory } from '$lib/data/directory';
+	import { sessionState } from '#lib/stores/session.svelte.js';
+	import { userDirectory } from '#lib/data/directory.js';
 </script>
 
 <div class="card" data-testid="user-authentication-panel">

@@ -7,7 +7,7 @@
 	// plus a persisted (localStorage) occurrence counter from $lib/data/order-entry,
 	// picks which canned scenario outcome to render — see that module for why.
 	import { Button } from 'lily-design-system-svelte-headless';
-	import { nextOneClickOccurrence, nextTwoClickOccurrence } from '$lib/data/order-entry';
+	import { nextOneClickOccurrence, nextTwoClickOccurrence } from '#lib/data/order-entry.js';
 
 	type OutcomeKind =
 		| 'chest-pain'

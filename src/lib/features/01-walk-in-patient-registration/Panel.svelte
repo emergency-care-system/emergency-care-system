@@ -10,7 +10,7 @@
 		findDuplicates,
 		generateMedicalRecordNumber,
 		type Patient
-	} from '$lib/data/patients';
+	} from '#lib/data/patients.js';
 
 	type FormState = {
 		givenName: string;

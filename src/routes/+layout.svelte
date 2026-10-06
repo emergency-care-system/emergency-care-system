@@ -2,7 +2,7 @@
 	import './layout.css';
 	import { onMount } from 'svelte';
 	import { Button } from 'lily-design-system-svelte-headless';
-	import { sessionState, logout, restoreSession } from '$lib/stores/session.svelte';
+	import { sessionState, logout, restoreSession } from '#lib/stores/session.svelte.js';
 	import { goto } from '$app/navigation';
 
 	let { children } = $props();
