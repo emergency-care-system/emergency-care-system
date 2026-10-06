@@ -80,10 +80,13 @@ hard to reverse in a way a plain commit-and-push is not.
   (`selenium-javascript-skill/`, and two Lily Design System skills,
   vendored from their own upstream repositories — see
   `skills/index.md`). Don't edit vendored content directly; each skill's
-  own `SKILL.md` says this repo's `AGENTS.md`/`spec/*.md` take
+  own `SKILL.md` says this repo's `AGENTS.md`/`AGENTS/*.md`/`spec/*.md` take
   precedence over it, not the other way around.
-- `AGENTS.md` / `CLAUDE.md` — agent-facing instructions; `CLAUDE.md` just
-  imports `AGENTS.md`.
+- `AGENTS.md` and `AGENTS/*.md` — agent-facing instructions: the root file
+  is the short index plus the rules that always apply; `AGENTS/` holds the
+  detail (commands, conventions, git workflow, companion site,
+  environment gotchas). Tools that expect another filename should import
+  `AGENTS.md`.
 - `llms.txt` / `llms.json` — a map of this repository's key files for AI
   agents and LLMs, kept in sync with each other and with this file.
 

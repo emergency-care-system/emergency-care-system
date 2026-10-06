@@ -14,6 +14,7 @@ which is the canonical source of truth for both files.
 ## Start here
 
 - [AGENTS.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/AGENTS.md): instructions for AI coding agents working in this repository.
+- [AGENTS/](https://github.com/emergency-care-system/emergency-care-system/tree/main/AGENTS): the detailed agent guides (commands, conventions, git workflow, companion site, environment gotchas).
 - [spec/index.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/index.md): tech stack, directory map, package manager, authentication, and how to add a new feature.
 - [README.md](https://github.com/emergency-care-system/emergency-care-system/blob/main/README.md): project overview, setup, and how to run the app and its test suites.
 

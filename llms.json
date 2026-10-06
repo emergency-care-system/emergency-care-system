@@ -13,6 +13,11 @@
 					"description": "Instructions for AI coding agents working in this repository."
 				},
 				{
+					"title": "AGENTS/",
+					"url": "https://github.com/emergency-care-system/emergency-care-system/tree/main/AGENTS",
+					"description": "The detailed agent guides (commands, conventions, git workflow, companion site, environment gotchas)."
+				},
+				{
 					"title": "spec/index.md",
 					"url": "https://github.com/emergency-care-system/emergency-care-system/blob/main/spec/index.md",
 					"description": "Tech stack, directory map, package manager, authentication, and how to add a new feature."
